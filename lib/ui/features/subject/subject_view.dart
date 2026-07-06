@@ -125,18 +125,51 @@ class SubjectView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                unit.name,
-                style: theme.textTheme.titleMedium?.copyWith(
-                  fontSize: 15,
-                ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                unit.description,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  fontSize: 12,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (unit.imageUrl != null && unit.imageUrl!.isNotEmpty)
+                    Padding(
+                      padding: const EdgeInsets.only(right: 14),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.network(
+                          unit.imageUrl!,
+                          width: 48,
+                          height: 48,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) =>
+                              Container(
+                            width: 48,
+                            height: 48,
+                            color: theme.colorScheme.primary.withOpacity(0.08),
+                            child: Icon(Icons.image_not_supported,
+                                color: theme.colorScheme.primary, size: 24),
+                          ),
+                        ),
+                      ),
+                    ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          unit.name,
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            fontSize: 15,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          unit.description,
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 14),
               Row(

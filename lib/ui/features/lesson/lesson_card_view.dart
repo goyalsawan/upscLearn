@@ -215,7 +215,7 @@ class _LessonCardViewState extends State<LessonCardView>
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               child: Text(
-                                'Card ${index + 1} of ${widget.lesson.cards.length}',
+                                'Card ${index + 1} of ${widget.lesson.cards.length}  •  ${card.readingTimeMinutes} mins read',
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 11,

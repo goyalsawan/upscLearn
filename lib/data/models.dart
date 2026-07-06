@@ -31,6 +31,7 @@ class Unit {
   final String id;
   final String name;
   final String description;
+  final String? imageUrl;
   final List<Module> modules;
   final RevisionData revision;
   final QuizData quiz;
@@ -39,6 +40,7 @@ class Unit {
     required this.id,
     required this.name,
     required this.description,
+    this.imageUrl,
     required this.modules,
     required this.revision,
     required this.quiz,
@@ -49,6 +51,7 @@ class Unit {
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String? ?? '',
+      imageUrl: json['imageUrl'] as String?,
       modules: (json['modules'] as List<dynamic>?)
               ?.map((e) => Module.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -69,6 +72,7 @@ class Module {
   final String id;
   final String name;
   final String description;
+  final String? imageUrl;
   final List<Lesson> lessons;
   final RevisionData revision;
   final QuizData quiz;
@@ -77,6 +81,7 @@ class Module {
     required this.id,
     required this.name,
     required this.description,
+    this.imageUrl,
     required this.lessons,
     required this.revision,
     required this.quiz,
@@ -87,6 +92,7 @@ class Module {
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String? ?? '',
+      imageUrl: json['imageUrl'] as String?,
       lessons: (json['lessons'] as List<dynamic>?)
               ?.map((e) => Lesson.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -107,11 +113,13 @@ class LessonCard {
   final String heading;
   final String body;
   final String? tip;
+  final int readingTimeMinutes;
 
   const LessonCard({
     required this.heading,
     required this.body,
     this.tip,
+    required this.readingTimeMinutes,
   });
 
   factory LessonCard.fromJson(Map<String, dynamic> json) {
@@ -119,6 +127,7 @@ class LessonCard {
       heading: json['heading'] as String? ?? '',
       body: json['body'] as String? ?? '',
       tip: json['tip'] as String?,
+      readingTimeMinutes: json['readingTimeMinutes'] as int? ?? 5,
     );
   }
 }
@@ -127,6 +136,7 @@ class Lesson {
   final String id;
   final String name;
   final String description;
+  final String? imageUrl;
   final int readingTimeMinutes;
   final List<LessonCard> cards;
 
@@ -134,6 +144,7 @@ class Lesson {
     required this.id,
     required this.name,
     required this.description,
+    this.imageUrl,
     required this.readingTimeMinutes,
     required this.cards,
   });
@@ -143,6 +154,7 @@ class Lesson {
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String? ?? '',
+      imageUrl: json['imageUrl'] as String?,
       readingTimeMinutes: json['readingTimeMinutes'] as int? ?? 5,
       cards: (json['cards'] as List<dynamic>?)
               ?.map((e) => LessonCard.fromJson(e as Map<String, dynamic>))
@@ -229,11 +241,13 @@ class RevisionCard {
   final String heading;
   final String body;
   final String? tip;
+  final int readingTimeMinutes;
 
   const RevisionCard({
     required this.heading,
     required this.body,
     this.tip,
+    required this.readingTimeMinutes,
   });
 
   factory RevisionCard.fromJson(Map<String, dynamic> json) {
@@ -241,6 +255,7 @@ class RevisionCard {
       heading: json['heading'] as String? ?? 'Key Point',
       body: json['body'] as String? ?? '',
       tip: json['tip'] as String?,
+      readingTimeMinutes: json['readingTimeMinutes'] as int? ?? 5,
     );
   }
 }
@@ -261,7 +276,7 @@ class RevisionData {
 
     final List<RevisionCard> cards = cardsData.map((c) {
       if (c is String) {
-        return RevisionCard(heading: 'Key Point', body: c, tip: null);
+        return RevisionCard(heading: 'Key Point', body: c, tip: null, readingTimeMinutes: 5);
       }
       return RevisionCard.fromJson(c as Map<String, dynamic>);
     }).toList();
@@ -274,4 +289,3 @@ class RevisionData {
     );
   }
 }
-

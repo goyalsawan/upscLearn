@@ -214,13 +214,16 @@ class _UnitDetailViewState extends State<UnitDetailView> {
     bool isDark,
   ) {
     int total = module.lessons.length;
+    final isSummaryModule = module.id.endsWith('m0') || module.id.endsWith('_m0');
 
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
         side: BorderSide(
-          color: isDark ? Colors.amber.withOpacity(0.5) : theme.primaryColor.withOpacity(0.5),
-          width: 1.5,
+          color: isSummaryModule
+              ? Colors.teal
+              : (isDark ? Colors.amber.withOpacity(0.5) : theme.primaryColor.withOpacity(0.5)),
+          width: isSummaryModule ? 2 : 1.5,
         ),
       ),
       child: InkWell(
@@ -236,15 +239,55 @@ class _UnitDetailViewState extends State<UnitDetailView> {
         child: Padding(
           padding: const EdgeInsets.all(18),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (module.imageUrl != null && module.imageUrl!.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(right: 14),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.network(
+                      module.imageUrl!,
+                      width: 48,
+                      height: 48,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          Container(
+                        width: 48,
+                        height: 48,
+                        color: theme.colorScheme.primary.withOpacity(0.08),
+                        child: Icon(Icons.image_not_supported,
+                            color: theme.colorScheme.primary, size: 24),
+                      ),
+                    ),
+                  ),
+                ),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (isSummaryModule)
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 6),
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: Colors.teal.withOpacity(0.15),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: const Text(
+                          'UNIT SUMMARY',
+                          style: TextStyle(
+                            fontSize: 9,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.teal,
+                          ),
+                        ),
+                      ),
                     Text(
                       module.name,
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontSize: 14,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -266,9 +309,13 @@ class _UnitDetailViewState extends State<UnitDetailView> {
                   ],
                 ),
               ),
-              Icon(
-                Icons.chevron_right,
-                color: isDark ? Colors.amber : theme.primaryColor,
+              const SizedBox(width: 8),
+              Align(
+                alignment: Alignment.center,
+                child: Icon(
+                  Icons.chevron_right,
+                  color: isDark ? Colors.amber : theme.primaryColor,
+                ),
               ),
             ],
           ),

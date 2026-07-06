@@ -213,12 +213,16 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
     ThemeData theme,
     bool isDark,
   ) {
+    final isSummaryLesson = lesson.id.endsWith('l0') || lesson.id.endsWith('_l0');
+
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
         side: BorderSide(
-          color: isDark ? Colors.amber.withOpacity(0.5) : theme.primaryColor.withOpacity(0.5),
-          width: 1.5,
+          color: isSummaryLesson
+              ? Colors.teal
+              : (isDark ? Colors.amber.withOpacity(0.5) : theme.primaryColor.withOpacity(0.5)),
+          width: isSummaryLesson ? 2 : 1.5,
         ),
       ),
       child: ListTile(
@@ -231,12 +235,54 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
           );
         },
         dense: true,
-        title: Text(
-          lesson.name,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
-          ),
+        leading: lesson.imageUrl != null && lesson.imageUrl!.isNotEmpty
+            ? ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(
+                  lesson.imageUrl!,
+                  width: 40,
+                  height: 40,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) =>
+                      Container(
+                    width: 40,
+                    height: 40,
+                    color: theme.colorScheme.primary.withOpacity(0.08),
+                    child: Icon(Icons.image_not_supported,
+                        color: theme.colorScheme.primary, size: 20),
+                  ),
+                ),
+              )
+            : null,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (isSummaryLesson)
+              Container(
+                margin: const EdgeInsets.only(bottom: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1.5),
+                decoration: BoxDecoration(
+                  color: Colors.teal.withOpacity(0.15),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: const Text(
+                  'MODULE SUMMARY',
+                  style: TextStyle(
+                    fontSize: 8,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.teal,
+                  ),
+                ),
+              ),
+            Text(
+              lesson.name,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
+            ),
+          ],
         ),
         subtitle: Text(
           '${lesson.readingTimeMinutes} mins read',

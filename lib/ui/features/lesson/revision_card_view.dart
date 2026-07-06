@@ -288,7 +288,7 @@ class _RevisionCardViewState extends State<RevisionCardView>
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               child: Text(
-                                'Fact ${index + 1} of ${widget.revision.cards.length}',
+                                'Fact ${index + 1} of ${widget.revision.cards.length}  •  ${card.readingTimeMinutes} mins read',
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 11,
