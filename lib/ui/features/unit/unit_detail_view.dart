@@ -25,9 +25,8 @@ class _UnitDetailViewState extends State<UnitDetailView> {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    // All checkpoints are active/unlocked by default
+    // All modules are unlocked by default
     const status = JourneyStatus.active;
-    const nextStatus = JourneyStatus.active;
 
     // Extract summary Module 0 (lives outside the Learn timeline)
     final summaryModules = widget.unit.modules
@@ -73,15 +72,8 @@ class _UnitDetailViewState extends State<UnitDetailView> {
             ),
             const SizedBox(height: 12),
 
-            // Pre-Unit Revision is the only node in this section
-            JourneyTimelineItem(
-              status: JourneyStatus.completed,
-              isFirst: true,
-              isLast: true,
-              nextStatus: nextStatus,
-              icon: Icons.psychology,
-              content: _buildRevisionSection(theme, isDark),
-            ),
+            // Pre-Unit Revision card (no timeline node — section header provides context)
+            _buildRevisionSection(theme, isDark),
             const SizedBox(height: 28),
 
             // ── LEARN SECTION ─────────────────────────────────────────────

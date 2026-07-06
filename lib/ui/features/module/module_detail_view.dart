@@ -24,9 +24,8 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    // All checkpoints are active/unlocked by default
+    // All lessons are unlocked by default
     const status = JourneyStatus.active;
-    const nextStatus = JourneyStatus.active;
 
     // Extract summary Lesson 0 (lives outside the Learn timeline)
     final summaryLessons = widget.module.lessons
@@ -72,15 +71,8 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
             ),
             const SizedBox(height: 12),
 
-            // Pre-Module Revision is the only node in this section
-            JourneyTimelineItem(
-              status: JourneyStatus.completed,
-              isFirst: true,
-              isLast: true,
-              nextStatus: nextStatus,
-              icon: Icons.menu_book,
-              content: _buildRevisionSection(theme, isDark),
-            ),
+            // Pre-Module Revision card (no timeline node — section header provides context)
+            _buildRevisionSection(theme, isDark),
             const SizedBox(height: 28),
 
             // ── LEARN SECTION ─────────────────────────────────────────────
