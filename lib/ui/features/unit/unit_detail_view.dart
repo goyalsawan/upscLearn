@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../data/models.dart';
 import '../../core/journey_timeline.dart';
+import '../lesson/lesson_view.dart';
 import '../lesson/revision_card_view.dart';
 import '../module/module_detail_view.dart';
 import '../quiz/quiz_view.dart';
@@ -228,12 +229,21 @@ class _UnitDetailViewState extends State<UnitDetailView> {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ModuleDetailView(module: module),
-            ),
-          );
+          if (isSummaryModule && module.lessons.isNotEmpty) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LessonView(lesson: module.lessons.first),
+              ),
+            );
+          } else {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ModuleDetailView(module: module),
+              ),
+            );
+          }
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(
