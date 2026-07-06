@@ -98,7 +98,8 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
                   isFirst: index == 0,
                   isLast: false,
                   nextStatus: JourneyStatus.active,
-                  icon: Icons.bookmark_border,
+                  // Show sequence number in circle instead of bookmark icon
+                  nodeLabel: '${index + 1}',
                   content: _buildLessonTile(context, lesson, theme, isDark),
                 );
               },
@@ -352,7 +353,8 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
                 ),
               ),
             Text(
-              lesson.name,
+              // Strip the 'Lesson N:' prefix — number is shown in the timeline node
+              lesson.name.replaceFirst(RegExp(r'^Lesson\s*\d+:\s*'), ''),
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 14,

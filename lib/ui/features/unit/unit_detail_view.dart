@@ -99,7 +99,8 @@ class _UnitDetailViewState extends State<UnitDetailView> {
                   isFirst: index == 0,
                   isLast: false,
                   nextStatus: JourneyStatus.active,
-                  icon: Icons.folder,
+                  // Show sequence number in circle instead of folder icon
+                  nodeLabel: '${index + 1}',
                   content: _buildModuleCard(context, module, theme, isDark),
                 );
               },
@@ -370,7 +371,8 @@ class _UnitDetailViewState extends State<UnitDetailView> {
                         ),
                       ),
                     Text(
-                      module.name,
+                      // Strip the 'Module N:' prefix — number is shown in the timeline node
+                      module.name.replaceFirst(RegExp(r'^Module\s*\d+:\s*'), ''),
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,

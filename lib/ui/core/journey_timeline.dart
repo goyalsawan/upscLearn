@@ -3,17 +3,22 @@ import 'package:timeline_tile/timeline_tile.dart';
 
 enum JourneyStatus { completed, active, locked }
 
-/// A premium, reusable journey timeline node circles that support status-specific colors,
-/// pulsing glowing borders for active nodes, and locked indicator icons.
+/// A premium, reusable journey timeline node circle that supports status-specific colors,
+/// pulsing glowing borders for active nodes, and an optional [nodeLabel] text
+/// (e.g. a sequence number) shown instead of an icon.
 class JourneyNodeCircle extends StatefulWidget {
   final JourneyStatus status;
   final IconData? icon;
+  /// When non-null, renders this string (e.g. '1', '2') inside the circle
+  /// instead of [icon].
+  final String? nodeLabel;
   final double size;
 
   const JourneyNodeCircle({
     super.key,
     required this.status,
     this.icon,
+    this.nodeLabel,
     this.size = 40,
   });
 
@@ -67,29 +72,47 @@ class _JourneyNodeCircleState extends State<JourneyNodeCircle>
 
     Color bg;
     Color border;
-    IconData displayIcon;
-    Color iconColor;
+    Color contentColor;
+    IconData? displayIcon;
 
     switch (widget.status) {
       case JourneyStatus.completed:
         bg = theme.colorScheme.tertiary.withOpacity(0.15);
         border = theme.colorScheme.tertiary;
-        displayIcon = widget.icon ?? Icons.check;
-        iconColor = theme.colorScheme.tertiary;
+        displayIcon = widget.nodeLabel == null ? (widget.icon ?? Icons.check) : null;
+        contentColor = theme.colorScheme.tertiary;
         break;
       case JourneyStatus.active:
         bg = theme.colorScheme.primary.withOpacity(0.15);
         border = theme.colorScheme.primary;
-        displayIcon = widget.icon ?? Icons.play_arrow;
-        iconColor = theme.colorScheme.primary;
+        displayIcon = widget.nodeLabel == null ? (widget.icon ?? Icons.play_arrow) : null;
+        contentColor = theme.colorScheme.primary;
         break;
       case JourneyStatus.locked:
         bg = theme.colorScheme.onSurface.withOpacity(0.05);
         border = theme.colorScheme.onSurface.withOpacity(0.15);
+        // Locked always shows the lock icon regardless of nodeLabel
         displayIcon = Icons.lock_outline;
-        iconColor = theme.colorScheme.onSurface.withOpacity(0.3);
+        contentColor = theme.colorScheme.onSurface.withOpacity(0.3);
         break;
     }
+
+    // Inner content: number label takes priority over icon
+    final Widget innerChild = widget.nodeLabel != null && widget.status != JourneyStatus.locked
+        ? Text(
+            widget.nodeLabel!,
+            style: TextStyle(
+              fontSize: widget.size * 0.38,
+              fontWeight: FontWeight.w800,
+              color: contentColor,
+              height: 1,
+            ),
+          )
+        : Icon(
+            displayIcon!,
+            size: widget.size * 0.5,
+            color: contentColor,
+          );
 
     Widget circleWidget = Container(
       width: widget.size,
@@ -99,13 +122,7 @@ class _JourneyNodeCircleState extends State<JourneyNodeCircle>
         shape: BoxShape.circle,
         border: Border.all(color: border, width: 2),
       ),
-      child: Center(
-        child: Icon(
-          displayIcon,
-          size: widget.size * 0.5,
-          color: iconColor,
-        ),
-      ),
+      child: Center(child: innerChild),
     );
 
     if (widget.status == JourneyStatus.active) {
@@ -141,6 +158,8 @@ class JourneyTimelineItem extends StatelessWidget {
   final bool isLast;
   final JourneyStatus? nextStatus;
   final IconData? icon;
+  /// Optional sequence number to show inside the node circle instead of [icon].
+  final String? nodeLabel;
   final Widget content;
   final double nodeSize;
 
@@ -152,6 +171,7 @@ class JourneyTimelineItem extends StatelessWidget {
     this.isLast = false,
     this.nextStatus,
     this.icon,
+    this.nodeLabel,
     this.nodeSize = 40,
   });
 
@@ -194,6 +214,7 @@ class JourneyTimelineItem extends StatelessWidget {
         indicator: JourneyNodeCircle(
           status: status,
           icon: icon,
+          nodeLabel: nodeLabel,
           size: nodeSize,
         ),
       ),
