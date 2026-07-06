@@ -29,6 +29,17 @@ class _UnitDetailViewState extends State<UnitDetailView> {
     const status = JourneyStatus.active;
     const nextStatus = JourneyStatus.active;
 
+    // Extract summary Module 0
+    final summaryModules = widget.unit.modules
+        .where((m) => m.id.endsWith('m0') || m.id.endsWith('_m0'))
+        .toList();
+    final summaryModule = summaryModules.isNotEmpty ? summaryModules.first : null;
+
+    // Filter out Module 0 from timeline modules
+    final timelineModules = widget.unit.modules
+        .where((m) => !m.id.endsWith('m0') && !m.id.endsWith('_m0'))
+        .toList();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.unit.name.split(':').last.trim()),
@@ -38,6 +49,12 @@ class _UnitDetailViewState extends State<UnitDetailView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // 0. Standalone Summary Card if present
+            if (summaryModule != null) ...[
+              _buildSummaryModuleHero(context, summaryModule, theme, isDark),
+              const SizedBox(height: 24),
+            ],
+
             // 1. Pre-Unit Revision is the first checkpoint
             JourneyTimelineItem(
               status: JourneyStatus.completed,
@@ -52,10 +69,10 @@ class _UnitDetailViewState extends State<UnitDetailView> {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: widget.unit.modules.length,
+              itemCount: timelineModules.length,
               itemBuilder: (context, index) {
-                final module = widget.unit.modules[index];
-                final isLastModule = index == widget.unit.modules.length - 1;
+                final module = timelineModules[index];
+                final isLastModule = index == timelineModules.length - 1;
 
                 return JourneyTimelineItem(
                   status: status,
@@ -389,6 +406,134 @@ class _UnitDetailViewState extends State<UnitDetailView> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildSummaryModuleHero(
+    BuildContext context,
+    Module module,
+    ThemeData theme,
+    bool isDark,
+  ) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: isDark
+              ? [
+                  const Color(0xFF0F766E).withOpacity(0.20),
+                  const Color(0xFF0D9488).withOpacity(0.10),
+                ]
+              : [
+                  const Color(0xFFE6F4F1),
+                  const Color(0xFFD8F3EC),
+                ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: isDark
+              ? const Color(0xFF0F766E).withOpacity(0.35)
+              : const Color(0xFF0D9488).withOpacity(0.50),
+          width: 1.5,
+        ),
+      ),
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (module.imageUrl != null && module.imageUrl!.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(right: 14),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.network(
+                      module.imageUrl!,
+                      width: 56,
+                      height: 56,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          Container(
+                        width: 56,
+                        height: 56,
+                        color: theme.colorScheme.primary.withOpacity(0.08),
+                        child: Icon(Icons.image_not_supported,
+                            color: theme.colorScheme.primary, size: 24),
+                      ),
+                    ),
+                  ),
+                ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(0.15),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: const Text(
+                        'UNIT SUMMARY MAP',
+                        style: TextStyle(
+                          fontSize: 9,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.teal,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      module.name,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      module.description,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontSize: 12.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          ElevatedButton.icon(
+            onPressed: () {
+              if (module.lessons.isNotEmpty) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LessonView(lesson: module.lessons.first),
+                  ),
+                );
+              }
+            },
+            icon: const Icon(Icons.play_circle_fill_rounded, size: 20),
+            label: const Text(
+              'Read Unit Summary Cards',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.teal.shade800,
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              elevation: 0,
+            ),
+          ),
+        ],
       ),
     );
   }

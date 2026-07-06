@@ -28,6 +28,17 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
     const status = JourneyStatus.active;
     const nextStatus = JourneyStatus.active;
 
+    // Extract summary Lesson 0
+    final summaryLessons = widget.module.lessons
+        .where((l) => l.id.endsWith('l0') || l.id.endsWith('_l0'))
+        .toList();
+    final summaryLesson = summaryLessons.isNotEmpty ? summaryLessons.first : null;
+
+    // Filter out Lesson 0 from timeline lessons
+    final timelineLessons = widget.module.lessons
+        .where((l) => !l.id.endsWith('l0') && !l.id.endsWith('_l0'))
+        .toList();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.module.name.split(':').last.trim()),
@@ -37,6 +48,12 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // 0. Standalone Summary Card if present
+            if (summaryLesson != null) ...[
+              _buildSummaryLessonHero(context, summaryLesson, theme, isDark),
+              const SizedBox(height: 24),
+            ],
+
             // 1. Pre-Module Revision is the first checkpoint
             JourneyTimelineItem(
               status: JourneyStatus.completed,
@@ -51,10 +68,10 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: widget.module.lessons.length,
+              itemCount: timelineLessons.length,
               itemBuilder: (context, index) {
-                final lesson = widget.module.lessons[index];
-                final isLastLesson = index == widget.module.lessons.length - 1;
+                final lesson = timelineLessons[index];
+                final isLastLesson = index == timelineLessons.length - 1;
 
                 return JourneyTimelineItem(
                   status: status,
@@ -353,6 +370,132 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildSummaryLessonHero(
+    BuildContext context,
+    Lesson lesson,
+    ThemeData theme,
+    bool isDark,
+  ) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: isDark
+              ? [
+                  const Color(0xFF0F766E).withOpacity(0.20),
+                  const Color(0xFF065F46).withOpacity(0.10),
+                ]
+              : [
+                  const Color(0xFFCCFBF1),
+                  const Color(0xFFD1FAE5),
+                ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: isDark
+              ? const Color(0xFF0F766E).withOpacity(0.35)
+              : const Color(0xFF14B8A6).withOpacity(0.45),
+          width: 1.5,
+        ),
+      ),
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (lesson.imageUrl != null && lesson.imageUrl!.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(right: 14),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.network(
+                      lesson.imageUrl!,
+                      width: 56,
+                      height: 56,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          Container(
+                        width: 56,
+                        height: 56,
+                        color: theme.colorScheme.primary.withOpacity(0.08),
+                        child: Icon(Icons.image_not_supported,
+                            color: theme.colorScheme.primary, size: 24),
+                      ),
+                    ),
+                  ),
+                ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(0.15),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: const Text(
+                        'MODULE SUMMARY MAP',
+                        style: TextStyle(
+                          fontSize: 9,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.teal,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      lesson.name,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      lesson.description,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontSize: 12.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LessonView(lesson: lesson),
+                ),
+              );
+            },
+            icon: const Icon(Icons.play_circle_fill_rounded, size: 20),
+            label: const Text(
+              'Read Module Summary Cards',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF0F766E),
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              elevation: 0,
+            ),
+          ),
+        ],
       ),
     );
   }
