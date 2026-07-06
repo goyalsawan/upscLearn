@@ -275,31 +275,3 @@ class RevisionData {
   }
 }
 
-class CurrentAffairsItem {
-  final String id;
-  final String title;
-  final String date;
-  final String category;
-  final String content;
-  final String? imageUrl;
-
-  const CurrentAffairsItem({
-    required this.id,
-    required this.title,
-    required this.date,
-    required this.category,
-    required this.content,
-    this.imageUrl,
-  });
-
-  factory CurrentAffairsItem.fromJson(Map<String, dynamic> json) {
-    return CurrentAffairsItem(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      date: json['date'] as String,
-      category: json['category'] as String,
-      content: json['content'] as String,
-      imageUrl: json['imageUrl'] as String?,
-    );
-  }
-}
