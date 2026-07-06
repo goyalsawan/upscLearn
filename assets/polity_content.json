@@ -1,0 +1,506 @@
+{
+  "subjects": [
+    {
+      "id": "polity",
+      "name": "Indian Polity",
+      "description": "Constitution, System of Government, and Public Policy",
+      "iconName": "gavel",
+      "units": [
+        {
+          "id": "polity_u1",
+          "name": "Unit 1: Constitutional Framework",
+          "description": "Evolution, Making, Features, and Philosophy of the Indian Constitution.",
+          "revision": {
+            "cards": [
+              {
+                "heading": "World's Longest Written Constitution",
+                "body": "The Indian Constitution is the **longest written constitution** in the world. It originally had a Preamble, 395 Articles in 22 Parts, and 8 Schedules. It borrows features from various global constitutions, adapted to Indian needs.",
+                "tip": "Sometimes called a 'bag of borrowings' — but the borrowings were thoughtfully adapted, not copied blindly."
+              },
+              {
+                "heading": "The Preamble's Core Philosophy",
+                "body": "The **Preamble** outlines the core objectives of the Indian state: *Sovereign, Socialist, Secular, Democratic Republic* ensuring **Justice, Liberty, Equality, and Fraternity** to all citizens. The words 'Socialist' and 'Secular' were added by the 42nd Amendment (1976)."
+              },
+              {
+                "heading": "Fundamental Rights (Part III)",
+                "body": "**Fundamental Rights** (Part III, Articles 12–35) are **justiciable** — they can be enforced in a court of law. They serve as a check on executive and legislative tyranny. The Right to Constitutional Remedies (Article 32) is the 'heart and soul' of the Constitution per Dr. Ambedkar.",
+                "tip": "Article 32 allows citizens to directly approach the Supreme Court for enforcement of Fundamental Rights."
+              }
+            ],
+            "recapQuestions": [
+              {
+                "id": "polity_u1_rev_q1",
+                "questionText": "Which document served as the blueprint/source for most administrative details of the Indian Constitution?",
+                "options": [
+                  "Government of India Act, 1935",
+                  "Indian Independence Act, 1947",
+                  "Cabinet Mission Plan, 1946",
+                  "US Constitution"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "The Government of India Act, 1935 is the primary structural source of the Constitution, from which around 250 provisions were adapted."
+              }
+            ]
+          },
+          "quiz": {
+            "id": "polity_u1_quiz",
+            "title": "Unit 1 Comprehensive Test",
+            "questions": [
+              {
+                "id": "polity_u1_q1",
+                "questionText": "Consider the following statements regarding the Constituent Assembly:\n1. It was fully elected on the basis of adult franchise.\n2. It acted as the first Parliament of free India.\nWhich of the statements given above is/are correct?",
+                "options": [
+                  "1 only",
+                  "2 only",
+                  "Both 1 and 2",
+                  "Neither 1 nor 2"
+                ],
+                "correctOptionIndex": 1,
+                "explanation": "Statement 1 is incorrect: The Constituent Assembly was partly elected (by provincial legislative assemblies, not direct adult franchise) and partly nominated. Statement 2 is correct: From August 15, 1947, it acted as the Dominion Legislature (the first Parliament of free India)."
+              },
+              {
+                "id": "polity_u1_q2",
+                "questionText": "The idea of a Constituent Assembly for India was proposed for the first time by:",
+                "options": [
+                  "Jawaharlal Nehru",
+                  "M.N. Roy",
+                  "Mahatma Gandhi",
+                  "Subhas Chandra Bose"
+                ],
+                "correctOptionIndex": 1,
+                "explanation": "The idea of a Constituent Assembly for India was put forward for the first time by M.N. Roy, a pioneer of the communist movement in India, in 1934."
+              },
+              {
+                "id": "polity_u1_q3",
+                "questionText": "Which of the following parts of the Constitution of India has been described as its \"Soul\"?",
+                "options": [
+                  "Fundamental Rights",
+                  "Directive Principles of State Policy",
+                  "The Preamble",
+                  "Fundamental Duties"
+                ],
+                "correctOptionIndex": 2,
+                "explanation": "The Preamble has been described by various experts (like Thakurdas Bhargava) as the \"Soul of the Constitution\" and the \"Key-note to the Constitution\". Note: Dr. B.R. Ambedkar termed Article 32 (Right to Constitutional Remedies) as the heart and soul of the Constitution."
+              }
+            ]
+          },
+          "modules": [
+            {
+              "id": "polity_u1_m1",
+              "name": "Module 1: Historical Background",
+              "description": "The company rule and crown rule milestones that shaped our administration.",
+              "revision": {
+                "cards": [
+                  {
+                    "heading": "British Rule in India — Origins",
+                    "body": "British rule in India began with the **East India Company** (Company Rule: 1773–1858). The **Regulating Act of 1773** was the first step toward centralization — it designated the Governor of Bengal as Governor-General and established a Supreme Court at Calcutta."
+                  },
+                  {
+                    "heading": "Pitt's India Act 1784 — Dual Control",
+                    "body": "**Pitt's India Act 1784** established a system of **dual control**: the **Court of Directors** handled commercial affairs, while a new **Board of Control** managed political affairs. India's territories were called 'British possessions in India' for the first time.",
+                    "tip": "This system of double government lasted until 1858 when the Crown abolished it."
+                  },
+                  {
+                    "heading": "Crown Rule (1858–1947)",
+                    "body": "After the 1857 Revolt, the **Government of India Act 1858** transferred power from the Company to the **British Crown**. The Governor-General was renamed **Viceroy** (Lord Canning was first), and a **Secretary of State for India** was created, accountable to the British Parliament."
+                  }
+                ],
+                "recapQuestions": [
+                  {
+                    "id": "polity_u1_m1_rev_q1",
+                    "questionText": "Who was the first Governor-General of Bengal?",
+                    "options": [
+                      "Lord Warren Hastings",
+                      "Lord William Bentinck",
+                      "Lord Mountbatten",
+                      "Lord Cornwallis"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "The Regulating Act of 1773 designated the Governor of Bengal as the \"Governor-General of Bengal\" and Warren Hastings was the first to hold this office."
+                  }
+                ]
+              },
+              "quiz": {
+                "id": "polity_u1_m1_quiz",
+                "title": "Module 1 Quiz: Historical Milestones",
+                "questions": [
+                  {
+                    "id": "polity_u1_m1_q1",
+                    "questionText": "Which Act for the first time made a provision for a Supreme Court in India (at Calcutta)?",
+                    "options": [
+                      "Regulating Act of 1773",
+                      "Pitts India Act of 1784",
+                      "Charter Act of 1813",
+                      "Charter Act of 1833"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "The Regulating Act of 1773 provided for the establishment of a Supreme Court at Fort William, Calcutta (1774), comprising one chief justice and three other judges."
+                  },
+                  {
+                    "id": "polity_u1_m1_q2",
+                    "questionText": "By which Act was the monopoly of trade of the East India Company in India ended, except for trade in tea and trade with China?",
+                    "options": [
+                      "Regulating Act of 1773",
+                      "Pitts India Act of 1784",
+                      "Charter Act of 1813",
+                      "Charter Act of 1833"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "The Charter Act of 1813 abolished the trade monopoly of the company in India, meaning Indian trade was thrown open to all British merchants. However, it continued the company monopoly in trade in tea and trade with China."
+                  },
+                  {
+                    "id": "polity_u1_m1_q3",
+                    "questionText": "Which Act introduced a system of open competition for the selection and recruitment of civil servants (opening it to Indians)?",
+                    "options": [
+                      "Charter Act of 1833",
+                      "Charter Act of 1853",
+                      "Government of India Act 1858",
+                      "Indian Councils Act 1861"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "The Charter Act of 1853 introduced an open competition system for civil services selection. The Macaulay Committee on Indian Civil Service was appointed in 1854."
+                  }
+                ]
+              },
+              "lessons": [
+                {
+                  "id": "polity_u1_m1_l1",
+                  "name": "The Company Rule (1773–1858)",
+                  "description": "Overview of British parliamentary control over the East India Company.",
+                  "readingTimeMinutes": 8,
+                  "cards": [
+                    {
+                      "heading": "The Company Rule (1773–1858)",
+                      "body": "The regulatory system developed by the British Parliament to supervise the commercial and political actions of the East India Company laid the foundational structures of the modern Indian administrative machinery."
+                    },
+                    {
+                      "heading": "1. The Regulating Act of 1779",
+                      "body": "This act was of great constitutional importance because:\n*   It was the first step taken by the British Government to **control and regulate** the affairs of the East India Company in India.\n*   It recognized, for the first time, the **political and administrative functions** of the Company.\n*   It laid the foundations of **central administration** in India.\n\n### Key Features:\n1.  **Governor-General of Bengal**: It designated the Governor of Bengal as the \"Governor-General of Bengal\" and created an Executive Council of four members to assist him. The first Governor-General was **Lord Warren Hastings**.\n2.  **Subordination of Presidencies**: It made the Governors of Bombay and Madras presidencies subordinate to the Governor-General of Bengal (previously, the three presidencies were independent of each other).\n3.  **Supreme Court at Calcutta**: It provided for the establishment of a Supreme Court at Calcutta (1774) comprising one Chief Justice and three other judges (Sir Elijah Impey was the first Chief Justice).\n4.  **No Private Trade**: It prohibited the servants of the Company from engaging in any private trade or accepting presents or bribes from the natives.\n5.  **Control by Court of Directors**: It strengthened the control of the British Government over the Company by requiring the Court of Directors (governing body of the Company) to report on its revenue, civil, and military affairs in India.\n\n---"
+                    },
+                    {
+                      "heading": "2. Pitt’s India Act of 1784",
+                      "body": "In a bid to rectify the defects of the Regulating Act of 1773, the British Parliament passed the Amending Act of 1781 (Act of Settlement). The next significant act was the Pitt’s India Act of 1784.\n\n### Key Features:\n1.  **Dual Control System**: It distinguished between the commercial and political functions of the Company. \n    *   It allowed the **Court of Directors** to manage the commercial affairs.\n    *   It created a new body called the **Board of Control** to manage the political affairs. Thus, it established a double government.\n2.  **Board of Control Powers**: The Board of Control was empowered to supervise and direct all operations of the civil and military government or revenues of the British possessions in India.\n3.  **\"British Possessions\"**: The Company’s territories in India were for the first time called the \"British possessions in India\".\n\n---"
+                    },
+                    {
+                      "heading": "3. The Charter Acts (1793–1853)",
+                      "body": "The Charter Acts renewed the charter of the East India Company every 20 years, progressively stripping it of commercial monopoly and establishing sovereignty.\n\n### Charter Act of 1813:\n*   Abolished the trade monopoly of the EIC in India, opening trade to all British subjects.\n*   Retained the Company's monopoly in **tea trade** and **trade with China**.\n*   Allotted ₹1 Lakh annually for the promotion of education in India.\n*   Allowed Christian missionaries to enter the country for religious propagation.\n\n### Charter Act of 1833 (The Final Step to Centralization):\n*   **Governor-General of India**: It made the Governor-General of Bengal the **Governor-General of India** and vested in him all civil and military powers. **Lord William Bentinck** became the first Governor-General of India.\n*   **Monopoly Ended**: It deprived the Governor of Bombay and Madras of their legislative powers. The Governor-General of India was given exclusive legislative powers for the entire British India. It ended the activities of the EIC as a commercial body, making it a purely administrative body.\n*   **Attempt at Open Civil Service**: It attempted to introduce a system of open competition for the selection of civil servants, but this provision was opposed by the Court of Directors and withdrawn.\n\n### Charter Act of 1853 (The Last Charter Act):\n*   **Separation of Powers**: It separated, for the first time, the legislative and executive functions of the Governor-General’s Council.\n*   **Legislative Council**: It added six new members called legislative councillors to the council, forming a 6-member Indian (Central) Legislative Council. This functioned as a mini-Parliament, adopting the procedures of the British Parliament.\n*   **Open Civil Service Implemented**: It introduced an open competition system of selection and recruitment of civil servants. The **Macaulay Committee** (Committee on the Indian Civil Service) was appointed in 1854."
+                    }
+                  ]
+                },
+                {
+                  "id": "polity_u1_m1_l2",
+                  "name": "The Crown Rule (1858–1947)",
+                  "description": "Direct administration by the British Empire and constitutional developments.",
+                  "readingTimeMinutes": 10,
+                  "cards": [
+                    {
+                      "heading": "The Crown Rule (1858–1947)",
+                      "body": "Following the Indian Rebellion of 1857 (often termed the Sepoy Mutiny or First War of Independence), the British Crown assumed direct sovereignty over India, replacing the administrative authority of the East India Company."
+                    },
+                    {
+                      "heading": "1. Government of India Act of 1858",
+                      "body": "This significant Act, known as the **Act for the Good Government of India**, abolished the East India Company and transferred the powers of government, territories, and revenues to the British Crown.\n\n### Key Features:\n1.  **Viceroy of India**: The designation of the Governor-General of India was changed to the **Viceroy of India**. The Viceroy acted as the direct representative of the British Crown in India. **Lord Canning** became the first Viceroy of India.\n2.  **End of Double Government**: It ended the double government system established by Pitt's India Act by abolishing the Board of Control and the Court of Directors.\n3.  **Secretary of State**: It created a new office, the **Secretary of State for India**, vested with complete authority and control over Indian administration. The Secretary of State was a member of the British Cabinet and was responsible ultimately to the British Parliament.\n4.  **Advisory Council**: It established a 15-member Council of India to assist the Secretary of State. This was an advisory body, headed by the Secretary of State as chairman.\n\n---"
+                    },
+                    {
+                      "heading": "2. Indian Councils Acts (1861, 1892, 1909)",
+                      "body": "These acts initiated the association of Indians with the law-making process.\n\n### Indian Councils Act of 1861:\n*   **Non-Official Members**: Provided that the Viceroy should nominate some Indians as non-official members of his expanded legislative council. In 1862, Lord Canning nominated three Indians: the Raja of Benares, the Maharaja of Patiala, and Sir Dinkar Rao.\n*   **Decentralization**: Restored legislative powers to the Bombay and Madras Presidencies, reversing the centralization trend since 1773.\n*   **Portfolio System**: Gave statutory recognition to the portfolio system introduced by Lord Canning in 1859.\n*   **Ordinances**: Empowered the Viceroy to issue ordinances during an emergency without the legislative council’s concurrence.\n\n### Indian Councils Act of 1909 (Morley-Minto Reforms):\n*   *Morley* was the Secretary of State, and *Minto* was the Viceroy.\n*   **Separate Electorate**: It introduced a system of **communal representation** for Muslims by accepting the concept of 'separate electorate'. Under this, Muslim members could be elected only by Muslim voters. Lord Minto came to be known as the **\"Father of Communal Electorate\"**.\n*   **Indians in Executive Council**: It provided for the association of Indians with the Executive Councils of the Viceroy and Governors. **Satyendra Prasad Sinha** became the first Indian to join the Viceroy’s Executive Council as a Law Member.\n\n---"
+                    },
+                    {
+                      "heading": "3. Government of India Act of 1919 (Montagu-Chelmsford Reforms)",
+                      "body": "Montagu was the Secretary of State and Chelmsford was the Viceroy.\n\n### Key Features:\n1.  **Dyarchy in Provinces**: It divided provincial subjects into two parts:\n    *   **Transferred Subjects**: Administered by the Governor with the aid of Ministers responsible to the Legislative Council.\n    *   **Reserved Subjects**: Administered by the Governor and his executive council without being responsible to the Legislative Council.\n2.  **Bicameralism**: It introduced, for the first time, bicameralism and direct elections in the country. The Indian Legislative Council was replaced by a bicameral legislature consisting of an Upper House (Council of State) and a Lower House (Legislative Assembly).\n3.  **PSC Established**: Provided for the establishment of a Public Service Commission, leading to the setting up of a Central Public Service Commission in 1926.\n\n---"
+                    },
+                    {
+                      "heading": "4. Government of India Act of 1935",
+                      "body": "This was a second milestone towards a completely responsible government in India. It was a detailed document with 321 Sections and 10 Schedules.\n\n### Key Features:\n1.  **All-India Federation**: It provided for the establishment of an All-India Federation consisting of Provinces and Princely States as units. (The federation never came into being as princely states did not join).\n2.  **Division of Powers**: Divided powers between the Centre and units into three lists: Federal List, Provincial List, and Concurrent List. Residual powers were given to the Viceroy.\n3.  **Abolition of Dyarchy in Provinces**: It abolished dyarchy in provinces and introduced 'Provincial Autonomy'. However, it introduced dyarchy at the Centre.\n4.  **Reserve Bank**: Provided for the establishment of the Reserve Bank of India to control currency and credit.\n5.  **Federal Court**: Provided for the establishment of a Federal Court (set up in 1937, which later became the Supreme Court)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "polity_u1_m2",
+              "name": "Module 2: Making of the Constitution",
+              "description": "How the Constituent Assembly was formed, drafted, and enacted the supreme law.",
+              "revision": {
+                "cards": [
+                  {
+                    "heading": "Cabinet Mission Plan & Constituent Assembly",
+                    "body": "The **Constituent Assembly** was constituted in November 1946 under the **Cabinet Mission Plan**. It held its first meeting on **December 9, 1946**, with Dr. Sachchidanand Sinha as temporary President. Dr. Rajendra Prasad was elected permanent President on December 11, 1946."
+                  },
+                  {
+                    "heading": "Objectives Resolution",
+                    "body": "On **December 13, 1946**, Jawaharlal Nehru moved the historic 'Objectives Resolution', declaring India an independent sovereign republic. It guaranteed justice, equality, and freedom to all citizens. It was unanimously adopted on January 22, 1947 and influenced the Preamble.",
+                    "tip": "The Objectives Resolution is the philosophical foundation of the Constitution."
+                  },
+                  {
+                    "heading": "The Drafting Committee",
+                    "body": "**Dr. B.R. Ambedkar** chaired the 7-member Drafting Committee, appointed on **August 29, 1947**. The committee sat for 141 days, producing the draft. The Constitution was adopted on **November 26, 1949** and came into full force on **January 26, 1950** (Republic Day)."
+                  }
+                ],
+                "recapQuestions": [
+                  {
+                    "id": "polity_u1_m2_rev_q1",
+                    "questionText": "Who was elected as the permanent President of the Constituent Assembly on December 11, 1946?",
+                    "options": [
+                      "Dr. B.R. Ambedkar",
+                      "Dr. Rajendra Prasad",
+                      "Sardar Vallabhbhai Patel",
+                      "H.C. Mukherjee"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "Dr. Rajendra Prasad was elected as the permanent President, and H.C. Mukherjee and V.T. Krishnamachari were elected as Vice-Presidents."
+                  }
+                ]
+              },
+              "quiz": {
+                "id": "polity_u1_m2_quiz",
+                "title": "Module 2 Quiz: Drafting and Enactment",
+                "questions": [
+                  {
+                    "id": "polity_u1_m2_q1",
+                    "questionText": "Who was the Constitutional Advisor to the Constituent Assembly?",
+                    "options": [
+                      "Dr. B.R. Ambedkar",
+                      "Sir B.N. Rau",
+                      "K.M. Munshi",
+                      "Dr. Rajendra Prasad"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "Sir B.N. Rau was appointed as the Constitutional Advisor (Legal Advisor) to the Constituent Assembly."
+                  },
+                  {
+                    "id": "polity_u1_m2_q2",
+                    "questionText": "Which of the following committees was chaired by Jawaharlal Nehru?",
+                    "options": [
+                      "Provincial Constitution Committee",
+                      "States Committee (Committee for Negotiating with States)",
+                      "Advisory Committee on Fundamental Rights",
+                      "Steering Committee"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "Jawaharlal Nehru chaired the Union Powers Committee, Union Constitution Committee, and States Committee. Vallabhbhai Patel chaired the Provincial Constitution Committee and the Advisory Committee on Fundamental Rights, etc. Rajendra Prasad chaired the Rules of Procedure and Steering Committees."
+                  },
+                  {
+                    "id": "polity_u1_m2_q3",
+                    "questionText": "The Constitution of India was adopted on which date?",
+                    "options": [
+                      "August 15, 1947",
+                      "November 26, 1949",
+                      "January 26, 1950",
+                      "January 24, 1950"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "The Constitution was adopted on November 26, 1949 (with a Preamble, 395 Articles, and 8 Schedules). It came into full force on January 26, 1950."
+                  }
+                ]
+              },
+              "lessons": [
+                {
+                  "id": "polity_u1_m2_l1",
+                  "name": "Composition and Working of Assembly",
+                  "description": "The formulation, seat allocation, and key sessions of the Assembly.",
+                  "readingTimeMinutes": 7,
+                  "cards": [
+                    {
+                      "heading": "Composition and Working of the Assembly",
+                      "body": "The Constituent Assembly of India was formed to draft the Constitution under the recommendations of the **Cabinet Mission Plan** of 1946."
+                    },
+                    {
+                      "heading": "1. Composition of the Constituent Assembly",
+                      "body": "The total strength of the Constituent Assembly was to be **389**:\n*   **296 seats** were allotted to British India:\n    *   292 members were drawn from the eleven governors' provinces.\n    *   4 members from the four chief commissioners' provinces (Delhi, Ajmer-Merwara, Coorg, and British Baluchistan).\n*   **93 seats** were allotted to the Princely States.\n\n### Method of Selection:\n1.  **Proportional Representation**: Seats were allocated in proportion to their respective population (roughly one seat for every million population).\n2.  **Community-based seats**: Seats allocated to British Provinces were divided among Muslims, Sikhs, and General (all except Muslims and Sikhs), in proportion to their population.\n3.  **Indirect Election**: Representatives of British Provinces were elected by the members of that community in the Provincial Legislative Assemblies using the single transferable vote.\n4.  **Nomination**: Representatives of Princely States were nominated by the heads of the princely states.\n*Thus, the Constituent Assembly was a **partly elected and partly nominated** body.*\n\n---"
+                    },
+                    {
+                      "heading": "2. Working of the Constituent Assembly",
+                      "body": "The Constituent Assembly held its first meeting on **December 9, 1946**.\n*   The Muslim League boycotted the meeting and insisted on a separate state of Pakistan. Hence, only 211 members attended.\n*   Following the French practice, **Dr. Sachchidanand Sinha**, the oldest member, was elected as the temporary President.\n*   On **December 11, 1946**, **Dr. Rajendra Prasad** was elected permanent President, with **H.C. Mukherjee** and **V.T. Krishnamachari** as Vice-Presidents.\n\n### The Objectives Resolution:\nOn **December 13, 1946**, Jawaharlal Nehru moved the historic 'Objectives Resolution' in the Assembly. It laid down the fundamentals and philosophy of the constitutional structure.\n*   It declared India as an Independent Sovereign Republic.\n*   It guaranteed justice, equality, freedom of thought, expression, belief, faith, worship, and association to all citizens.\n*   It provided adequate safeguards for minorities, backward and tribal areas, and depressed classes.\n*   The Resolution was unanimously adopted by the Assembly on **January 22, 1947**. It influenced the Preamble of the Constitution."
+                    }
+                  ]
+                },
+                {
+                  "id": "polity_u1_m2_l2",
+                  "name": "Committees, Enactment, and Adoption",
+                  "description": "The Drafting Committee, various major committees, and the final adoption of the draft.",
+                  "readingTimeMinutes": 7,
+                  "cards": [
+                    {
+                      "heading": "Committees, Enactment, and Adoption",
+                      "body": "To manage the diverse tasks of constitution-making, the Constituent Assembly appointed several committees, categorised into Major and Minor Committees."
+                    },
+                    {
+                      "heading": "1. Major Committees",
+                      "body": "1.  **Drafting Committee** – Dr. B.R. Ambedkar\n2.  **Union Powers Committee** – Jawaharlal Nehru\n3.  **Union Constitution Committee** – Jawaharlal Nehru\n4.  **Provincial Constitution Committee** – Sardar Patel\n5.  **Advisory Committee on Fundamental Rights, Minorities and Tribal and Excluded Areas** – Sardar Patel\n6.  **Rules of Procedure Committee** – Dr. Rajendra Prasad\n7.  **States Committee (Negotiating Committee)** – Jawaharlal Nehru\n8.  **Steering Committee** – Dr. Rajendra Prasad\n\n---"
+                    },
+                    {
+                      "heading": "2. The Drafting Committee",
+                      "body": "Among all the committees, the most important was the **Drafting Committee** set up on **August 29, 1947**. It was charged with preparing a draft of the new Constitution. It consisted of seven members:\n1.  **Dr. B.R. Ambedkar** (Chairman)\n2.  **N. Gopalaswamy Ayyangar**\n3.  **Alladi Krishnaswamy Ayyar**\n4.  **Dr. K.M. Munshi**\n5.  **Syed Mohammad Saadullah**\n6.  **N. Madhava Rau** (replaced B.L. Mitter, who resigned due to ill health)\n7.  **T.T. Krishnamachari** (replaced D.P. Khaitan, who died in 1948)\n\nThe Drafting Committee prepared the first draft of the Constitution of India, published in February 1948. After considering public feedback, a second draft was published in October 1948. In total, the committee sat for 141 days.\n\n---"
+                    },
+                    {
+                      "heading": "3. Enactment and Adoption",
+                      "body": "Dr. B.R. Ambedkar introduced the final draft of the Constitution in the Assembly on November 4, 1948 (first reading). After detailed clause-by-clause readings, the motion on the draft was declared passed on **November 26, 1949**.\n\n*   Out of 299 members, 284 were present on that day and signed the Constitution.\n*   The Constitution as adopted on **November 26, 1949**, contained a **Preamble, 395 Articles, and 8 Schedules**.\n*   The Preamble was enacted *after* the entire Constitution was already enacted.\n*   Dr. B.R. Ambedkar, the Chairman of the Drafting Committee, is recognized as the **\"Father of the Constitution of India\"** and is also known as \"Modern Manu\".\n\n### Commencement:\nWhile some provisions (citizenship, elections, provisional parliament, temporary provisions) came into force on November 26, 1949, the major portion of the Constitution came into force on **January 26, 1950**.\n*   This day is celebrated as **Republic Day**.\n*   January 26 was chosen specifically because on this day in 1930, the **Purna Swaraj** (Complete Independence) day was celebrated, following the Lahore Session (December 1929) of the Indian National Congress."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "polity_u2",
+          "name": "Unit 2: System of Government",
+          "description": "Parliamentary, Federal, Centre-State Relations, and Emergency Provisions.",
+          "revision": {
+            "cards": [
+              {
+                "heading": "Parliamentary System — Core Principle",
+                "body": "The Constitution establishes a **parliamentary form of government** both at the Centre and in the States. It features a **federal structure with strong unitary biases**, often described as *quasi-federal* by K.C. Wheare. Executive power is responsible to the Legislature."
+              },
+              {
+                "heading": "Nominal vs. Real Executive",
+                "body": "The **President** is the nominal executive (*De Jure*) — the constitutional head. The **Prime Minister** is the real executive (*De Facto*) who runs the government. The President acts on the aid and advice of the Council of Ministers (Article 74).",
+                "tip": "Key contrast: President = Head of State; PM = Head of Government."
+              },
+              {
+                "heading": "Collective Responsibility",
+                "body": "**Collective Responsibility** (Article 75) is the bedrock of the parliamentary system. The Council of Ministers is collectively responsible to the **Lok Sabha**. They sink or swim together — if a no-confidence motion passes, the entire Cabinet must resign."
+              }
+            ],
+            "recapQuestions": [
+              {
+                "id": "polity_u2_rev_q1",
+                "questionText": "Under the parliamentary system, the Council of Ministers is collectively responsible to which body?",
+                "options": [
+                  "The President",
+                  "The Lok Sabha (House of the People)",
+                  "The Rajya Sabha (Council of States)",
+                  "The Supreme Court"
+                ],
+                "correctOptionIndex": 1,
+                "explanation": "Article 75 of the Constitution clearly states that the Council of Ministers shall be collectively responsible to the Lok Sabha (the popular chamber of the legislature)."
+              }
+            ]
+          },
+          "quiz": {
+            "id": "polity_u2_quiz",
+            "title": "Unit 2 Comprehensive Test",
+            "questions": [
+              {
+                "id": "polity_u2_q1",
+                "questionText": "Who described the Indian Constitution as \"quasi-federal\"?",
+                "options": [
+                  "K.C. Wheare",
+                  "Morris Jones",
+                  "Granville Austin",
+                  "Ivor Jennings"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "K.C. Wheare described the Indian Constitution as \"quasi-federal\" (unitary with federal features rather than federal with unitary features)."
+              },
+              {
+                "id": "polity_u2_q2",
+                "questionText": "Which of the following is NOT a federal feature of the Indian Constitution?",
+                "options": [
+                  "Written Constitution",
+                  "Bicameralism",
+                  "Single Citizenship",
+                  "Independent Judiciary"
+                ],
+                "correctOptionIndex": 2,
+                "explanation": "Single citizenship is a unitary feature. A standard federal system (like the US) features dual citizenship (state and national)."
+              }
+            ]
+          },
+          "modules": [
+            {
+              "id": "polity_u2_m3",
+              "name": "Module 3: Parliamentary System",
+              "description": "Core concepts of executive responsibility and comparison with presidential systems.",
+              "revision": {
+                "cards": [
+                  {
+                    "heading": "Constitutional Provisions for Parliament",
+                    "body": "**Articles 74 and 75** govern the parliamentary system at the Centre. **Articles 163 and 164** govern the parliamentary system in the States. The system is also called *Cabinet government*, *Responsible government*, or the *Westminster model*."
+                  },
+                  {
+                    "heading": "Key Features of Parliamentary Government",
+                    "body": "*   **Leadership of Prime Minister**: Pivotal role as leader of Council of Ministers, ruling party, and the House.\n*   **Majority Party Rule**: The party winning majority Lok Sabha seats forms government.\n*   **Dual Membership**: Ministers must be members of the legislature — non-members must get elected within 6 months.",
+                    "tip": "If a minister is not a member of either House for 6 consecutive months, they cease to be a minister."
+                  }
+                ],
+                "recapQuestions": [
+                  {
+                    "id": "polity_u2_m3_rev_q1",
+                    "questionText": "In a parliamentary system, ministers must be members of:",
+                    "options": [
+                      "Only the lower house",
+                      "Only the upper house",
+                      "The Legislature",
+                      "The Judiciary"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "Ministers are members of the legislature (parliament). If a non-member is appointed minister, they must get elected to either house within 6 months."
+                  }
+                ]
+              },
+              "quiz": {
+                "id": "polity_u2_m3_quiz",
+                "title": "Module 3 Quiz: Executive and Legislature",
+                "questions": [
+                  {
+                    "id": "polity_u2_m3_q1",
+                    "questionText": "The Prime Minister of India, at the time of appointment:",
+                    "options": [
+                      "must be a member of one of the Houses of Parliament.",
+                      "need not necessarily be a member of one of the Houses of Parliament but must become a member of Lok Sabha within six months.",
+                      "need not necessarily be a member of one of the Houses of Parliament but must become a member of one of the Houses within six months.",
+                      "must be a member of the Lok Sabha."
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "As per the Supreme Court ruling (1997), a person who is not a member of either House can be appointed as Prime Minister/Minister for six months, within which they must get elected to either House, otherwise they cease to be Prime Minister/Minister."
+                  }
+                ]
+              },
+              "lessons": [
+                {
+                  "id": "polity_u2_m3_l1",
+                  "name": "Features of Parliamentary Government",
+                  "description": "Key characteristics of the Westminister system adopted in India.",
+                  "readingTimeMinutes": 6,
+                  "cards": [
+                    {
+                      "heading": "Features of Parliamentary Government",
+                      "body": "The Constitution of India provides for a parliamentary system of government both at the Centre (Articles 74 and 75) and in the states (Articles 163 and 164).\n\nThe parliamentary system is also known as the **Cabinet government** or **Responsible government** or **Westminster model** of government, and is prevalent in Britain, Japan, Canada, and India."
+                    },
+                    {
+                      "heading": "Key Features in India:",
+                      "body": "1.  **Nominal and Real Executives**:\n    *   The President is the nominal executive (**De Jure** executive or titular sovereign).\n    *   The Prime Minister is the real executive (**De Facto** executive).\n    *   Thus, the President is the Head of the State, while the Prime Minister is the Head of the Government.\n2.  **Majority Party Rule**: The political party which secures majority seats in the Lok Sabha forms the government. The leader of that party is appointed as the Prime Minister by the President.\n3.  **Collective Responsibility**: This is the bedrock principle of parliamentary government. The ministers are collectively responsible to the Parliament in general and to the Lok Sabha in particular (Article 75). They work as a team and sink or swim together.\n4.  **Political Homogeneity**: Usually, members of the Council of Ministers belong to the same political party, hence they share the same political ideology. (In a coalition government, ministers are bound by a common minimum programme).\n5.  **Double Membership**: The ministers are members of both the legislature and the executive. A person cannot remain a minister without being a member of Parliament for more than six consecutive months.\n6.  **Leadership of Prime Minister**: The Prime Minister plays a pivotal leadership role. He is the leader of the Council of Ministers, leader of the House, and leader of the ruling party."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geography",
+      "name": "Geography",
+      "description": "Physical, Indian, and World Geography (Coming Soon)",
+      "iconName": "public",
+      "units": []
+    },
+    {
+      "id": "economics",
+      "name": "Economics",
+      "description": "Indian Economy, Economic Development, and Finance (Coming Soon)",
+      "iconName": "trending_up",
+      "units": []
+    },
+    {
+      "id": "history",
+      "name": "History",
+      "description": "Ancient, Medieval, and Modern Indian History (Coming Soon)",
+      "iconName": "history_edu",
+      "units": []
+    }
+  ]
+}

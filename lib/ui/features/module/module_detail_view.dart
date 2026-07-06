@@ -1,0 +1,313 @@
+import 'package:flutter/material.dart';
+import '../../../data/models.dart';
+import '../../core/journey_timeline.dart';
+import '../lesson/lesson_view.dart';
+import '../lesson/revision_card_view.dart';
+import '../quiz/quiz_view.dart';
+
+/// Screen listing lessons within a module, structured as a sequential Lesson Journey Map.
+class ModuleDetailView extends StatefulWidget {
+  final Module module;
+
+  const ModuleDetailView({
+    super.key,
+    required this.module,
+  });
+
+  @override
+  State<ModuleDetailView> createState() => _ModuleDetailViewState();
+}
+
+class _ModuleDetailViewState extends State<ModuleDetailView> {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
+    // All checkpoints are active/unlocked by default
+    const status = JourneyStatus.active;
+    const nextStatus = JourneyStatus.active;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.module.name.split(':').last.trim()),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // 1. Pre-Module Revision is the first checkpoint
+            JourneyTimelineItem(
+              status: JourneyStatus.completed,
+              isFirst: true,
+              isLast: false,
+              nextStatus: nextStatus,
+              icon: Icons.menu_book,
+              content: _buildRevisionSection(theme, isDark),
+            ),
+
+            // 2. Lessons connected timeline path
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: widget.module.lessons.length,
+              itemBuilder: (context, index) {
+                final lesson = widget.module.lessons[index];
+                final isLastLesson = index == widget.module.lessons.length - 1;
+
+                return JourneyTimelineItem(
+                  status: status,
+                  isFirst: false,
+                  isLast: false,
+                  nextStatus: isLastLesson ? JourneyStatus.active : JourneyStatus.active,
+                  icon: Icons.bookmark_border,
+                  content: _buildLessonTile(context, lesson, theme, isDark),
+                );
+              },
+            ),
+
+            // 3. Final Module Practice Quiz is the last checkpoint
+            JourneyTimelineItem(
+              status: JourneyStatus.active,
+              isFirst: false,
+              isLast: true,
+              icon: Icons.question_answer,
+              content: _buildModuleQuizCard(theme, isDark),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRevisionSection(ThemeData theme, bool isDark) {
+    final revision = widget.module.revision;
+    final hasCards = revision.cards.isNotEmpty;
+
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: isDark
+              ? [
+                  const Color(0xFF0F766E).withOpacity(0.15),
+                  const Color(0xFF065F46).withOpacity(0.10),
+                ]
+              : [
+                  const Color(0xFFCCFBF1),
+                  const Color(0xFFD1FAE5),
+                ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: isDark
+              ? const Color(0xFF0F766E).withOpacity(0.30)
+              : const Color(0xFF14B8A6).withOpacity(0.45),
+          width: 1.5,
+        ),
+      ),
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? const Color(0xFF0F766E).withOpacity(0.25)
+                      : const Color(0xFF0F766E).withOpacity(0.12),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  Icons.layers_outlined,
+                  color: isDark ? const Color(0xFF14B8A6) : const Color(0xFF0F766E),
+                  size: 22,
+                ),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Module Warmup Checkpoint',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 15,
+                        color: isDark ? Colors.white : const Color(0xFF134E4A),
+                      ),
+                    ),
+                    const SizedBox(height: 3),
+                    Text(
+                      hasCards
+                          ? '${revision.cards.length} revision card${revision.cards.length == 1 ? '' : 's'} · prerequisite check'
+                          : 'Prerequisite check quiz',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: isDark
+                            ? const Color(0xFF5EEAD4)
+                            : const Color(0xFF0F766E),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          Text(
+            'Review the core prerequisite facts and take the warmup check quiz before starting this module.',
+            style: TextStyle(
+              fontSize: 13,
+              height: 1.5,
+              color: isDark ? const Color(0xFF94A3B8) : const Color(0xFF334155),
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RevisionCardView(
+                      revision: revision,
+                      quiz: widget.module.quiz,
+                      contextLabel: widget.module.name,
+                    ),
+                  ),
+                );
+              },
+              icon: Icon(
+                hasCards ? Icons.layers_rounded : Icons.quiz_rounded,
+                size: 18,
+              ),
+              label: Text(
+                hasCards ? 'Start Warmup Checkpoint' : 'Start Prerequisite Check',
+                style: const TextStyle(fontWeight: FontWeight.w700),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF0F766E),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 13),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                elevation: 0,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLessonTile(
+    BuildContext context,
+    Lesson lesson,
+    ThemeData theme,
+    bool isDark,
+  ) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(
+          color: isDark ? Colors.amber.withOpacity(0.5) : theme.primaryColor.withOpacity(0.5),
+          width: 1.5,
+        ),
+      ),
+      child: ListTile(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LessonView(lesson: lesson),
+            ),
+          );
+        },
+        dense: true,
+        title: Text(
+          lesson.name,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 14,
+          ),
+        ),
+        subtitle: Text(
+          '${lesson.readingTimeMinutes} mins read',
+          style: const TextStyle(
+            fontSize: 11,
+          ),
+        ),
+        trailing: const Icon(
+          Icons.arrow_forward_ios,
+          size: 14,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildModuleQuizCard(ThemeData theme, bool isDark) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(
+          color: isDark ? Colors.teal.shade900 : Colors.teal.shade200,
+          width: 1.5,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Module MCQ Practice',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        'Test your knowledge on this module.',
+                        style: TextStyle(fontSize: 11, color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => QuizView(quiz: widget.module.quiz),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: theme.primaryColor,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text(
+                'Start Practice Quiz',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

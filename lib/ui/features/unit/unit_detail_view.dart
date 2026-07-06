@@ -1,0 +1,338 @@
+import 'package:flutter/material.dart';
+import '../../../data/models.dart';
+import '../../core/journey_timeline.dart';
+import '../lesson/revision_card_view.dart';
+import '../module/module_detail_view.dart';
+import '../quiz/quiz_view.dart';
+
+/// Screen displaying the Unit details via a connected Module Journey Map timeline.
+class UnitDetailView extends StatefulWidget {
+  final Unit unit;
+
+  const UnitDetailView({
+    super.key,
+    required this.unit,
+  });
+
+  @override
+  State<UnitDetailView> createState() => _UnitDetailViewState();
+}
+
+class _UnitDetailViewState extends State<UnitDetailView> {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
+    // All checkpoints are active/unlocked by default
+    const status = JourneyStatus.active;
+    const nextStatus = JourneyStatus.active;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.unit.name.split(':').last.trim()),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // 1. Pre-Unit Revision is the first checkpoint
+            JourneyTimelineItem(
+              status: JourneyStatus.completed,
+              isFirst: true,
+              isLast: false,
+              nextStatus: nextStatus,
+              icon: Icons.psychology,
+              content: _buildRevisionSection(theme, isDark),
+            ),
+
+            // 2. Modules list journey mapping
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: widget.unit.modules.length,
+              itemBuilder: (context, index) {
+                final module = widget.unit.modules[index];
+                final isLastModule = index == widget.unit.modules.length - 1;
+
+                return JourneyTimelineItem(
+                  status: status,
+                  isFirst: false,
+                  isLast: false,
+                  nextStatus: isLastModule ? JourneyStatus.active : JourneyStatus.active,
+                  icon: Icons.folder,
+                  content: _buildModuleCard(context, module, theme, isDark),
+                );
+              },
+            ),
+
+            // 3. Final Unit Quiz Checkpoint is the last node
+            JourneyTimelineItem(
+              status: JourneyStatus.active,
+              isFirst: false,
+              isLast: true,
+              icon: Icons.workspace_premium,
+              content: _buildUnitQuizCard(theme, isDark),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRevisionSection(ThemeData theme, bool isDark) {
+    final revision = widget.unit.revision;
+    final hasCards = revision.cards.isNotEmpty;
+
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: isDark
+              ? [
+                  const Color(0xFF854D0E).withOpacity(0.15),
+                  const Color(0xFF92400E).withOpacity(0.10),
+                ]
+              : [
+                  const Color(0xFFFEF3C7),
+                  const Color(0xFFFDE68A),
+                ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: isDark
+              ? const Color(0xFFB45309).withOpacity(0.30)
+              : const Color(0xFFF59E0B).withOpacity(0.55),
+          width: 1.5,
+        ),
+      ),
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? const Color(0xFFB45309).withOpacity(0.25)
+                      : const Color(0xFFB45309).withOpacity(0.12),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  Icons.auto_stories_outlined,
+                  color: isDark ? const Color(0xFFFBBF24) : const Color(0xFFB45309),
+                  size: 22,
+                ),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Unit Revision Checkpoint',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 15,
+                        color: isDark ? Colors.white : const Color(0xFF78350F),
+                      ),
+                    ),
+                    const SizedBox(height: 3),
+                    Text(
+                      hasCards
+                          ? '${revision.cards.length} revision card${revision.cards.length == 1 ? '' : 's'} · prerequisite check'
+                          : 'Prerequisite check quiz',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: isDark
+                            ? const Color(0xFFFCD34D)
+                            : const Color(0xFFB45309),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          Text(
+            'Review the key unit-level concepts and take the prerequisite check before diving into the modules.',
+            style: TextStyle(
+              fontSize: 13,
+              height: 1.5,
+              color: isDark ? const Color(0xFF94A3B8) : const Color(0xFF334155),
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RevisionCardView(
+                      revision: revision,
+                      quiz: widget.unit.quiz,
+                      contextLabel: widget.unit.name,
+                    ),
+                  ),
+                );
+              },
+              icon: Icon(
+                hasCards ? Icons.layers_rounded : Icons.quiz_rounded,
+                size: 18,
+              ),
+              label: Text(
+                hasCards ? 'Start Revision Checkpoint' : 'Start Prerequisite Check',
+                style: const TextStyle(fontWeight: FontWeight.w700),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFB45309),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 13),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                elevation: 0,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildModuleCard(
+    BuildContext context,
+    Module module,
+    ThemeData theme,
+    bool isDark,
+  ) {
+    int total = module.lessons.length;
+
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(
+          color: isDark ? Colors.amber.withOpacity(0.5) : theme.primaryColor.withOpacity(0.5),
+          width: 1.5,
+        ),
+      ),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ModuleDetailView(module: module),
+            ),
+          );
+        },
+        borderRadius: BorderRadius.circular(16),
+        child: Padding(
+          padding: const EdgeInsets.all(18),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      module.name,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontSize: 14,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      module.description,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontSize: 12,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      '$total lessons  •  Unlocked',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.grey.shade500,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(
+                Icons.chevron_right,
+                color: isDark ? Colors.amber : theme.primaryColor,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildUnitQuizCard(ThemeData theme, bool isDark) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(
+          color: isDark ? Colors.teal.shade900 : Colors.teal.shade200,
+          width: 1.5,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Unit Comprehensive Quiz',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        'Test your overall understanding of this unit.',
+                        style: TextStyle(fontSize: 11, color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => QuizView(quiz: widget.unit.quiz),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: theme.primaryColor,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text(
+                'Start Unit Quiz',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
