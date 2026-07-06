@@ -3,493 +3,2986 @@
     {
       "id": "polity",
       "name": "Indian Polity",
-      "description": "Indian Constitution, System of Government, and Constitutional Organs",
-      "iconName": "gavel",
+      "description": "Exam-focused Indian Polity content grounded in Laxmikanth-style UPSC preparation.",
       "units": [
         {
-          "id": "unit_1",
-          "name": "Unit 1: Constitutional Framework",
-          "description": "Historical background, making of the constitution, preamble, and salient features",
-          "imageUrl": "https://picsum.photos/id/24/300/300",
+          "id": "polity_u1",
+          "name": "Constitutional Framework",
+          "description": "Introduces the meaning, importance, salient features, and sources of the Indian Constitution.",
+          "imageUrl": "",
+          "unitSummary": {
+            "cards": [
+              {
+                "heading": "What this unit covers",
+                "body": "This unit explains the Constitution as the basic framework of government. It covers why a constitution is needed, why India adopted a written and detailed Constitution, and how constitutional supremacy works.",
+                "tip": "Use it as the foundation for all later Polity units.",
+                "readingTimeMinutes": 1
+              },
+              {
+                "heading": "Core themes",
+                "body": "The main themes are constitutionalism, written constitution, federalism with unitary bias, parliamentary government, independent judiciary, judicial review, democracy, republic, secularism, and borrowed features.",
+                "tip": "These are high-frequency UPSC themes.",
+                "readingTimeMinutes": 1
+              },
+              {
+                "heading": "Exam relevance",
+                "body": "UPSC often frames this area through statement-based questions on features, sources, constitutional supremacy, and federal-unitary balance.",
+                "tip": "Expect conceptual traps, not only direct facts.",
+                "readingTimeMinutes": 1
+              }
+            ]
+          },
           "revision": {
             "cards": [
               {
-                "heading": "Historical Foundations",
-                "body": "The constitutional framework of India evolved through various British-era legislative acts. Key milestones include the Regulating Act of 1773, Charter Acts, and the Government of India Acts of 1919 and 1935.",
-                "tip": "The Government of India Act 1935 contributed the majority of the administrative blueprint.",
-                "readingTimeMinutes": 5
+                "heading": "Constitution",
+                "body": "A Constitution is the basic law of a country. It creates institutions, distributes powers, protects rights, sets procedures, and limits State authority.",
+                "tip": "Constitution = powers + limits + rights.",
+                "readingTimeMinutes": 1
+              },
+              {
+                "heading": "Constitutionalism",
+                "body": "Constitutionalism means limited government. Political power must be exercised through constitutional rules, procedures, values, and rights.",
+                "tip": "A country may have a constitution but weak constitutionalism.",
+                "readingTimeMinutes": 1
+              },
+              {
+                "heading": "Supreme law",
+                "body": "The Constitution is superior to ordinary law. Parliament and State Legislatures can make laws, but those laws must conform to the Constitution.",
+                "tip": "This is the basis for judicial review.",
+                "readingTimeMinutes": 1
+              },
+              {
+                "heading": "Written and detailed",
+                "body": "India has a written and detailed Constitution due to diversity, federal needs, administrative complexity, colonial legacy, and the goal of social transformation.",
+                "tip": "Detail was a design need.",
+                "readingTimeMinutes": 1
+              },
+              {
+                "heading": "Federal with unitary bias",
+                "body": "India has federal features like written Constitution, division of powers, independent judiciary, and constitutional supremacy. But the Union is stronger in many areas.",
+                "tip": "This is a classic UPSC phrase.",
+                "readingTimeMinutes": 1
+              },
+              {
+                "heading": "Parliamentary government",
+                "body": "India follows a parliamentary system where the executive is responsible to the legislature. The President is the constitutional head, while the Prime Minister and Council of Ministers exercise real executive power.",
+                "tip": "Responsibility is the key feature.",
+                "readingTimeMinutes": 1
+              },
+              {
+                "heading": "Judicial review",
+                "body": "Judicial review allows courts to examine whether laws and executive actions conform to the Constitution.",
+                "tip": "It protects constitutional supremacy.",
+                "readingTimeMinutes": 1
+              },
+              {
+                "heading": "Borrowed but adapted",
+                "body": "The Constitution borrowed many provisions from other systems but adapted them to Indian conditions.",
+                "tip": "Borrowed does not mean copied.",
+                "readingTimeMinutes": 1
               }
             ],
             "recapQuestions": [
               {
                 "id": "polity_u1_rev_q1",
-                "questionText": "Which act established the dual control system of double government?",
+                "questionText": "Which of the following best explains constitutionalism?",
                 "options": [
-                  "Regulating Act of 1773",
-                  "Pitt's India Act of 1784",
-                  "Charter Act of 1833",
-                  "Government of India Act 1858"
+                  "Rule by majority without limits",
+                  "Limited government under constitutional rules",
+                  "Rule by judiciary alone",
+                  "Rule by executive discretion"
                 ],
                 "correctOptionIndex": 1,
-                "explanation": "Pitt's India Act of 1784 separated political affairs (managed by Board of Control) and commercial affairs (managed by Court of Directors)."
+                "explanation": "Constitutionalism means limited government."
+              },
+              {
+                "id": "polity_u1_rev_q2",
+                "questionText": "Which statement is correct about ordinary law?",
+                "options": [
+                  "It is superior to the Constitution",
+                  "It is valid only if it conforms to the Constitution",
+                  "It cannot be reviewed by courts",
+                  "It can override all constitutional limits"
+                ],
+                "correctOptionIndex": 1,
+                "explanation": "Ordinary laws must conform to the Constitution."
+              },
+              {
+                "id": "polity_u1_rev_q3",
+                "questionText": "India is called federal with unitary bias because:",
+                "options": [
+                  "States have no powers",
+                  "The Constitution has federal features but a stronger Union",
+                  "India has no written Constitution",
+                  "The judiciary is dependent on Parliament"
+                ],
+                "correctOptionIndex": 1,
+                "explanation": "India has federal features but a strong Centre."
+              },
+              {
+                "id": "polity_u1_rev_q4",
+                "questionText": "Which of the following is a federal feature?",
+                "options": [
+                  "Division of powers",
+                  "Single citizenship",
+                  "Emergency provisions",
+                  "Integrated election machinery"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "Division of powers is a federal feature."
+              },
+              {
+                "id": "polity_u1_rev_q5",
+                "questionText": "Judicial review most directly supports:",
+                "options": [
+                  "Constitutional supremacy",
+                  "Hereditary monarchy",
+                  "Political party discipline",
+                  "Cabinet secrecy"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "Judicial review protects constitutional supremacy."
+              },
+              {
+                "id": "polity_u1_rev_q6",
+                "questionText": "Which source is linked with Directive Principles of State Policy?",
+                "options": [
+                  "Ireland",
+                  "Japan",
+                  "Canada",
+                  "France"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "DPSPs are inspired by Ireland."
               }
             ]
           },
-          "quiz": {
+          "unitQuiz": {
             "id": "polity_u1_quiz",
-            "title": "Constitutional Framework Test",
+            "title": "Constitutional Framework Quiz",
             "questions": [
               {
                 "id": "polity_u1_q1",
-                "questionText": "The Federal Court of India was established in which year under the Act of 1935?",
+                "questionText": "Consider the following statements:\n1. A Constitution creates government institutions.\n2. A Constitution limits government institutions.\nWhich of the statements given above is/are correct?",
                 "options": [
-                  "1935",
-                  "1937",
-                  "1947",
-                  "1950"
+                  "1 only",
+                  "2 only",
+                  "Both 1 and 2",
+                  "Neither 1 nor 2"
+                ],
+                "correctOptionIndex": 2,
+                "explanation": "A Constitution both creates and limits institutions."
+              },
+              {
+                "id": "polity_u1_q2",
+                "questionText": "Which of the following are federal features of the Indian Constitution?\n1. Written Constitution\n2. Division of powers\n3. Independent judiciary\n4. Single citizenship\nSelect the correct answer:",
+                "options": [
+                  "1, 2 and 3 only",
+                  "1 and 4 only",
+                  "2, 3 and 4 only",
+                  "1, 2, 3 and 4"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "Single citizenship is generally a unitary feature; the first three are federal features."
+              },
+              {
+                "id": "polity_u1_q3",
+                "questionText": "Which one of the following best shows the unitary bias of the Indian Constitution?",
+                "options": [
+                  "Division of powers",
+                  "Supremacy of Constitution",
+                  "Emergency provisions strengthening the Union",
+                  "Independent judiciary"
+                ],
+                "correctOptionIndex": 2,
+                "explanation": "Emergency provisions can strengthen the Union and show unitary bias."
+              },
+              {
+                "id": "polity_u1_q4",
+                "questionText": "In the parliamentary system, the executive is primarily responsible to the:",
+                "options": [
+                  "Legislature",
+                  "Judiciary",
+                  "Election Commission",
+                  "Comptroller and Auditor General"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "Executive responsibility to the legislature is central to parliamentary government."
+              },
+              {
+                "id": "polity_u1_q5",
+                "questionText": "Judicial review means:",
+                "options": [
+                  "Courts can examine the constitutionality of laws and executive actions",
+                  "Courts can frame the annual budget",
+                  "Courts can appoint ministers",
+                  "Courts can dissolve Parliament at will"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "Judicial review allows constitutional testing of laws and actions."
+              },
+              {
+                "id": "polity_u1_q6",
+                "questionText": "Which pair is correctly matched?\n1. Parliamentary system - United Kingdom\n2. Fundamental Rights - United States\n3. DPSPs - Ireland\nSelect the correct answer:",
+                "options": [
+                  "1 and 2 only",
+                  "2 and 3 only",
+                  "1 and 3 only",
+                  "1, 2 and 3"
+                ],
+                "correctOptionIndex": 3,
+                "explanation": "All three source-feature pairs are standard."
+              },
+              {
+                "id": "polity_u1_q7",
+                "questionText": "The Indian Constitution is called detailed mainly because it:",
+                "options": [
+                  "Covers many institutions, rights, procedures and special situations",
+                  "Contains only the Preamble",
+                  "Avoids administrative details",
+                  "Has no federal provisions"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "It covers a very wide constitutional field."
+              },
+              {
+                "id": "polity_u1_q8",
+                "questionText": "Which statement is correct about constitutional supremacy?",
+                "options": [
+                  "Ordinary law is above the Constitution",
+                  "All public authority must act within the Constitution",
+                  "Courts cannot test laws",
+                  "The executive can ignore rights"
                 ],
                 "correctOptionIndex": 1,
-                "explanation": "The Federal Court of India was set up in 1937 in Delhi under the provisions of the Government of India Act 1935."
+                "explanation": "Constitutional supremacy means public authority must conform to the Constitution."
+              },
+              {
+                "id": "polity_u1_q9",
+                "questionText": "India is a republic because:",
+                "options": [
+                  "The head of State is elected",
+                  "The Prime Minister exists",
+                  "There is a written Constitution",
+                  "There are many states"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": "A republic has an elected, not hereditary, head of State."
+              },
+              {
+                "id": "polity_u1_q10",
+                "questionText": "Which of the following best describes the Indian Constitution's borrowings?",
+                "options": [
+                  "Blind copying of foreign systems",
+                  "Selective borrowing and adaptation to Indian needs",
+                  "No borrowing from anywhere",
+                  "Only colonial copying"
+                ],
+                "correctOptionIndex": 1,
+                "explanation": "The Constitution borrowed tested ideas and adapted them."
               }
             ]
           },
+          "pyqs": [
+            {
+              "id": "polity_u1_pyq_1",
+              "year": 2024,
+              "sourceTopic": "Parts of the Constitution",
+              "questionText": "Which of the following statements are correct about the Constitution of India?\n1. Powers of the Municipalities are given in Part IX A of the Constitution.\n2. Emergency provisions are given in Part XVIII of the Constitution.\n3. Provisions related to the amendment of the Constitution are given in Part XX of the Constitution.\nSelect the answer using the code given below:",
+              "options": [
+                "1 and 2 only",
+                "2 and 3 only",
+                "1 and 3 only",
+                "1, 2 and 3"
+              ],
+              "correctOptionIndex": 3,
+              "explanation": "Part IXA deals with Municipalities, Part XVIII deals with Emergency Provisions, and Part XX deals with Amendment of the Constitution."
+            }
+          ],
           "modules": [
             {
-              "id": "polity_u1_m0",
-              "name": "Module 0: Unit 1 Summary",
-              "description": "Comprehensive key milestones and summaries of the entire Constitutional Framework",
-              "imageUrl": "https://picsum.photos/id/42/300/300",
-              "revision": {
-                "cards": [],
-                "recapQuestions": []
-              },
-              "quiz": {
-                "id": "polity_u1_m0_quiz",
-                "title": "Unit 1 Summary Review",
-                "questions": []
-              },
-              "lessons": [
-                {
-                  "id": "polity_u1_m0_l0",
-                  "name": "Unit 1 Master Summary",
-                  "description": "Quick review deck spanning historical rules to constitution drafting",
-                  "imageUrl": "https://picsum.photos/id/28/300/300",
-                  "readingTimeMinutes": 35,
-                  "cards": [
-                    {
-                      "heading": "Master Summary Overview",
-                      "body": "This lesson summarizes the entire Unit 1 content. It covers the evolution from East India Company rules to the final adoption of the Constitution on November 26, 1949.",
-                      "tip": "Use this card as a high-level table of contents.",
-                      "readingTimeMinutes": 5
-                    },
-                    {
-                      "heading": "Milestone 1: Company Rule (1773-1858)",
-                      "body": "Parliament gradually took control over the East India Company via the Regulating Act 1773, Pitt's India Act 1784, and the final Charter Act of 1853 which separated legislative and executive organs.",
-                      "tip": "The EIC began as a trading venture and ended as a pure administrative body.",
-                      "readingTimeMinutes": 7
-                    },
-                    {
-                      "heading": "Milestone 2: Crown Rule (1858-1947)",
-                      "body": "Direct British Empire control started in 1858. The Secretary of State and Viceroy offices were created. Morley-Minto 1909 introduced separate electorates; Montagu-Chelmsford 1919 brought dyarchy; and the 1935 Act proposed a federation.",
-                      "tip": "The 1935 Act introduced provincial autonomy.",
-                      "readingTimeMinutes": 8
-                    },
-                    {
-                      "heading": "Milestone 3: Drafting the Constitution",
-                      "body": "The Constituent Assembly sat for almost 3 years. It adopted the Objectives Resolution and set up the Drafting Committee chaired by Dr. B.R. Ambedkar to create the supreme law.",
-                      "tip": "The assembly acted as both a constituent and legislative body.",
-                      "readingTimeMinutes": 7
-                    },
-                    {
-                      "heading": "Milestone 4: Core Pillars Adopted",
-                      "body": "On November 26, 1949, the Constitution was adopted with 395 Articles and 8 Schedules. Full enforcement occurred on January 26, 1950, commemorating Purna Swaraj Day.",
-                      "tip": "Parts of citizenship and elections were enforced immediately in Nov 1949.",
-                      "readingTimeMinutes": 8
-                    }
-                  ]
-                }
-              ]
-            },
-            {
               "id": "polity_u1_m1",
-              "name": "Module 1: Historical Background",
-              "description": "Chronological legislative milestones that shaped the Indian administration",
-              "imageUrl": "https://picsum.photos/id/33/300/300",
+              "name": "Constitution: Meaning and Importance",
+              "description": "Explains what a Constitution is, why it is needed, and how it differs from ordinary law.",
+              "moduleSummary": {
+                "cards": [
+                  {
+                    "heading": "Module focus",
+                    "body": "This module explains the Constitution as the basic framework of the State.",
+                    "tip": "Start from purpose.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Why it matters",
+                    "body": "Without constitutional limits, political power can become arbitrary.",
+                    "tip": "Power needs rules.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Core distinction",
+                    "body": "Constitutional law is superior to ordinary law.",
+                    "tip": "This is a basic UPSC trap.",
+                    "readingTimeMinutes": 1
+                  }
+                ]
+              },
               "revision": {
                 "cards": [
                   {
-                    "heading": "Company vs Crown",
-                    "body": "The historical background is divided into: \n1. **Company Rule (1773-1858)**: Regulating, Pitt's, and Charter Acts.\n2. **Crown Rule (1858-1947)**: Government of India Acts and Councils Acts.",
-                    "readingTimeMinutes": 5
+                    "heading": "Basic law",
+                    "body": "The Constitution gives authority to institutions and controls how they function.",
+                    "tip": "No institution is above it.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Limited government",
+                    "body": "The Constitution defines powers, procedures, rights and remedies.",
+                    "tip": "This prevents arbitrary rule.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Need in India",
+                    "body": "India needed a written Constitution due to diversity, federal needs, rights protection and social transformation.",
+                    "tip": "Connect history with design.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Ordinary law",
+                    "body": "Ordinary law is made under the Constitution and cannot violate it.",
+                    "tip": "Creator is higher than creation.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Constitutional morality",
+                    "body": "Constitutional morality means respect for constitutional values, procedures and limits.",
+                    "tip": "Power must follow discipline.",
+                    "readingTimeMinutes": 1
                   }
                 ],
-                "recapQuestions": []
+                "recapQuestions": [
+                  {
+                    "id": "polity_u1_m1_rev_q1",
+                    "questionText": "Constitutionalism means:",
+                    "options": [
+                      "Unlimited government",
+                      "Limited government under law",
+                      "Rule by one person",
+                      "No written rules"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "Constitutionalism means limited government."
+                  },
+                  {
+                    "id": "polity_u1_m1_rev_q2",
+                    "questionText": "Ordinary law is lower than the Constitution because:",
+                    "options": [
+                      "It is always unwritten",
+                      "It is valid only under constitutional authority",
+                      "Courts cannot see it",
+                      "Parliament has no power"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "Ordinary law derives validity from the Constitution."
+                  },
+                  {
+                    "id": "polity_u1_m1_rev_q3",
+                    "questionText": "A detailed Constitution was necessary for India due to:",
+                    "options": [
+                      "Social diversity and federal needs",
+                      "Uniform society",
+                      "No states",
+                      "No rights"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Diversity and federal needs required detail."
+                  },
+                  {
+                    "id": "polity_u1_m1_rev_q4",
+                    "questionText": "The Constitution controls government by:",
+                    "options": [
+                      "Defining powers and limits",
+                      "Ending all elections",
+                      "Removing rights",
+                      "Making courts advisory only"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "It defines powers and limits."
+                  },
+                  {
+                    "id": "polity_u1_m1_rev_q5",
+                    "questionText": "Constitutional morality means:",
+                    "options": [
+                      "Social custom only",
+                      "Respect for constitutional values and procedures",
+                      "Military rule",
+                      "Ignoring institutions"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "It means respect for constitutional values and procedures."
+                  }
+                ]
               },
-              "quiz": {
+              "moduleQuiz": {
                 "id": "polity_u1_m1_quiz",
-                "title": "Historical Background Quiz",
+                "title": "Constitution: Meaning and Importance Quiz",
                 "questions": [
                   {
-                    "id": "polity_u1_m1_q1",
-                    "questionText": "Which act introduced separate electorates for Muslims?",
+                    "id": "polity_u1_q1",
+                    "questionText": "Consider the following statements:\n1. A Constitution creates government institutions.\n2. A Constitution limits government institutions.\nWhich of the statements given above is/are correct?",
                     "options": [
-                      "Indian Councils Act 1861",
-                      "Indian Councils Act 1892",
-                      "Indian Councils Act 1909",
-                      "Government of India Act 1919"
+                      "1 only",
+                      "2 only",
+                      "Both 1 and 2",
+                      "Neither 1 nor 2"
                     ],
                     "correctOptionIndex": 2,
-                    "explanation": "The Morley-Minto Reforms of 1909 introduced separate electorates for Muslims."
+                    "explanation": "A Constitution both creates and limits institutions."
+                  },
+                  {
+                    "id": "polity_u1_q2",
+                    "questionText": "Which of the following are federal features of the Indian Constitution?\n1. Written Constitution\n2. Division of powers\n3. Independent judiciary\n4. Single citizenship\nSelect the correct answer:",
+                    "options": [
+                      "1, 2 and 3 only",
+                      "1 and 4 only",
+                      "2, 3 and 4 only",
+                      "1, 2, 3 and 4"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Single citizenship is generally a unitary feature; the first three are federal features."
+                  },
+                  {
+                    "id": "polity_u1_q3",
+                    "questionText": "Which one of the following best shows the unitary bias of the Indian Constitution?",
+                    "options": [
+                      "Division of powers",
+                      "Supremacy of Constitution",
+                      "Emergency provisions strengthening the Union",
+                      "Independent judiciary"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "Emergency provisions can strengthen the Union and show unitary bias."
+                  },
+                  {
+                    "id": "polity_u1_q4",
+                    "questionText": "In the parliamentary system, the executive is primarily responsible to the:",
+                    "options": [
+                      "Legislature",
+                      "Judiciary",
+                      "Election Commission",
+                      "Comptroller and Auditor General"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Executive responsibility to the legislature is central to parliamentary government."
+                  },
+                  {
+                    "id": "polity_u1_q5",
+                    "questionText": "Judicial review means:",
+                    "options": [
+                      "Courts can examine the constitutionality of laws and executive actions",
+                      "Courts can frame the annual budget",
+                      "Courts can appoint ministers",
+                      "Courts can dissolve Parliament at will"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Judicial review allows constitutional testing of laws and actions."
+                  },
+                  {
+                    "id": "polity_u1_q6",
+                    "questionText": "Which pair is correctly matched?\n1. Parliamentary system - United Kingdom\n2. Fundamental Rights - United States\n3. DPSPs - Ireland\nSelect the correct answer:",
+                    "options": [
+                      "1 and 2 only",
+                      "2 and 3 only",
+                      "1 and 3 only",
+                      "1, 2 and 3"
+                    ],
+                    "correctOptionIndex": 3,
+                    "explanation": "All three source-feature pairs are standard."
+                  },
+                  {
+                    "id": "polity_u1_q7",
+                    "questionText": "The Indian Constitution is called detailed mainly because it:",
+                    "options": [
+                      "Covers many institutions, rights, procedures and special situations",
+                      "Contains only the Preamble",
+                      "Avoids administrative details",
+                      "Has no federal provisions"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "It covers a very wide constitutional field."
+                  },
+                  {
+                    "id": "polity_u1_q8",
+                    "questionText": "Which statement is correct about constitutional supremacy?",
+                    "options": [
+                      "Ordinary law is above the Constitution",
+                      "All public authority must act within the Constitution",
+                      "Courts cannot test laws",
+                      "The executive can ignore rights"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "Constitutional supremacy means public authority must conform to the Constitution."
+                  },
+                  {
+                    "id": "polity_u1_q9",
+                    "questionText": "India is a republic because:",
+                    "options": [
+                      "The head of State is elected",
+                      "The Prime Minister exists",
+                      "There is a written Constitution",
+                      "There are many states"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "A republic has an elected, not hereditary, head of State."
+                  },
+                  {
+                    "id": "polity_u1_q10",
+                    "questionText": "Which of the following best describes the Indian Constitution's borrowings?",
+                    "options": [
+                      "Blind copying of foreign systems",
+                      "Selective borrowing and adaptation to Indian needs",
+                      "No borrowing from anywhere",
+                      "Only colonial copying"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "The Constitution borrowed tested ideas and adapted them."
                   }
                 ]
               },
               "lessons": [
                 {
-                  "id": "polity_u1_m1_l0",
-                  "name": "Module 1 Summary",
-                  "description": "5-card master summary of the historical evolution",
-                  "imageUrl": "https://picsum.photos/id/35/300/300",
-                  "readingTimeMinutes": 30,
-                  "cards": [
-                    {
-                      "heading": "Module 1 Summary Overview",
-                      "body": "This lesson summarizes the historical acts under British rule. It highlights the transformation of India's administrative architecture from 1773 to 1947.",
-                      "tip": "Use this as a quick reference timeline guide.",
-                      "readingTimeMinutes": 5
-                    },
-                    {
-                      "heading": "Centralization Trend (1773-1833)",
-                      "body": "Centralization started with Warren Hastings as Governor-General of Bengal (1773) and reached its peak with Lord William Bentinck becoming Governor-General of India (1833) with full legislative controls.",
-                      "tip": "The 1833 Charter ended the EIC commercial monopoly completely.",
-                      "readingTimeMinutes": 6
-                    },
-                    {
-                      "heading": "Decentralization Trend (1861-1937)",
-                      "body": "Decentralization began with the Indian Councils Act of 1861, restoring legislative powers to Bombay and Madras presidencies, culminating in provincial autonomy under the 1935 Act.",
-                      "tip": "Provincial autonomy came into force in 1937.",
-                      "readingTimeMinutes": 6
-                    },
-                    {
-                      "heading": "Communal Electorates Evolution",
-                      "body": "Lord Minto introduced separate electorates for Muslims in 1909. This communal electorate system was extended to Sikhs, Indian Christians, Anglo-Indians, and Europeans in 1919.",
-                      "tip": "Lord Minto is known as the Father of Communal Electorate.",
-                      "readingTimeMinutes": 6
-                    },
-                    {
-                      "heading": "Double Government Systems",
-                      "body": "Pitt's India Act of 1784 established a system of double government. In 1919, a system of dual rule called dyarchy (transferred and reserved subjects) was introduced in provinces.",
-                      "tip": "Dyarchy in provinces was abolished by the 1935 Act.",
-                      "readingTimeMinutes": 7
-                    }
-                  ]
-                },
-                {
                   "id": "polity_u1_m1_l1",
-                  "name": "The Company Rule (1773–1858)",
-                  "description": "Overview of British parliamentary control over the East India Company",
-                  "imageUrl": "https://picsum.photos/id/29/300/300",
-                  "readingTimeMinutes": 20,
+                  "name": "What is a Constitution?",
+                  "description": "A constitution is the basic framework that creates government, distributes power, protects rights, and limits authority.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces what is a constitution? in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "A constitution is the basic framework that creates government, distributes power, protects rights, and limits authority.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
                   "cards": [
                     {
-                      "heading": "Lesson 1 Summary Overview",
-                      "body": "This lesson reviews Company Rule from 1773 to 1858. It covers the Regulating Act of 1773, Pitt's India Act of 1784, and the final Charter Acts.",
-                      "tip": "Focus on the transition of power from EIC to the Crown.",
-                      "readingTimeMinutes": 5
+                      "heading": "Basic meaning",
+                      "body": "A Constitution is a set of basic rules according to which a country is governed. It defines institutions, powers, procedures, rights, and limits.",
+                      "tip": "It is the foundation of public authority.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "The Regulating Act of 1773",
-                      "body": "First step by the British Government to regulate the Company. It designated the Governor of Bengal as the Governor-General of Bengal (Warren Hastings) and set up the Calcutta Supreme Court.",
-                      "tip": "Warren Hastings was assisted by a 4-member executive council.",
-                      "readingTimeMinutes": 7
+                      "heading": "Creates institutions",
+                      "body": "The Constitution creates institutions such as legislature, executive, judiciary, and constitutional bodies.",
+                      "tip": "Institutions derive power from it.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Pitt’s India Act of 1784",
-                      "body": "Distinguished between commercial (Court of Directors) and political (Board of Control) functions, establishing a double government.",
-                      "tip": "Company territories were termed 'British possessions in India'.",
-                      "readingTimeMinutes": 8
+                      "heading": "Distributes power",
+                      "body": "It distributes power among organs and levels of government to prevent concentration of authority.",
+                      "tip": "Distribution supports accountability.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Protects citizens",
+                      "body": "It protects citizens through rights and remedies against unlawful or arbitrary State action.",
+                      "tip": "Rights need remedies.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Limits government",
+                      "body": "Even elected governments must follow constitutional boundaries.",
+                      "tip": "Democracy is constitutional, not unlimited.",
+                      "readingTimeMinutes": 1
                     }
-                  ]
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "What is a Constitution? is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test what is a constitution? through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m1_l1_rev_q1",
+                        "questionText": "Which statement best captures a Constitution?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "a Constitution is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m1_l1_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m1_l1_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m1_l1_quiz",
+                    "title": "What is a Constitution? Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m1_l1_q1",
+                        "questionText": "Consider the following statements about a Constitution:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m1_l1_q2",
+                        "questionText": "Which of the following is most closely related to a Constitution?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m1_l1_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m1_l1_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m1_l1_q5",
+                        "questionText": "The safest way to remember a Constitution is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
                 },
                 {
                   "id": "polity_u1_m1_l2",
-                  "name": "The Crown Rule (1858–1947)",
-                  "description": "Direct administration by the British Empire and constitutional developments",
-                  "imageUrl": "https://picsum.photos/id/30/300/300",
-                  "readingTimeMinutes": 25,
+                  "name": "Why India Needed a Written Constitution",
+                  "description": "India needed a clear written Constitution because of diversity, colonial experience, federal requirements, rights protection, and social transformation.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces why india needed a written constitution in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "India needed a clear written Constitution because of diversity, colonial experience, federal requirements, rights protection, and social transformation.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
                   "cards": [
                     {
-                      "heading": "Lesson 2 Summary Overview",
-                      "body": "This lesson reviews the Crown Rule from 1858 to 1947. Learn about the Secretary of State, Morley-Minto, Montagu-Chelmsford, and the 1935 Government of India Act.",
-                      "tip": "Compare provincial dyarchy of 1919 with central dyarchy of 1935.",
-                      "readingTimeMinutes": 5
+                      "heading": "Colonial transition",
+                      "body": "India inherited colonial institutions and needed to transform them into democratic constitutional institutions.",
+                      "tip": "Independence required redesign.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Government of India Act 1858",
-                      "body": "Transferred EIC territories and administration to the British Crown. Replaced Governor-General with Viceroy (Lord Canning) and created the Secretary of State for India.",
-                      "tip": "Abolished Board of Control and Court of Directors.",
-                      "readingTimeMinutes": 10
+                      "heading": "Diversity",
+                      "body": "India's linguistic, religious, caste, tribal and regional diversity required clear constitutional rules.",
+                      "tip": "Diversity made clarity necessary.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Government of India Act 1935",
-                      "body": "Divided powers into Federal, Provincial, and Concurrent lists. Abolished provincial dyarchy, introduced provincial autonomy, and established a Federal Court.",
-                      "tip": "The All-India Federation proposed in this act never materialized.",
-                      "readingTimeMinutes": 10
+                      "heading": "Federal needs",
+                      "body": "Union-State relations, legislative lists, finance, emergencies and dispute resolution needed written rules.",
+                      "tip": "Federalism needs a written framework.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Rights protection",
+                      "body": "A written Constitution helped protect citizens and groups in a society marked by inequality.",
+                      "tip": "Rights were central to citizenship.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Social transformation",
+                      "body": "The Constitution aimed to transform society through justice, equality, welfare goals and abolition of discriminatory practices.",
+                      "tip": "It is reformist.",
+                      "readingTimeMinutes": 1
                     }
-                  ]
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Why India Needed a Written Constitution is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test why india needed a written constitution through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m1_l2_rev_q1",
+                        "questionText": "Which statement best captures a written Constitution?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "a written Constitution is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m1_l2_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m1_l2_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m1_l2_quiz",
+                    "title": "Why India Needed a Written Constitution Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m1_l2_q1",
+                        "questionText": "Consider the following statements about a written Constitution:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m1_l2_q2",
+                        "questionText": "Which of the following is most closely related to a written Constitution?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m1_l2_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m1_l2_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m1_l2_q5",
+                        "questionText": "The safest way to remember a written Constitution is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "polity_u1_m1_l3",
+                  "name": "Constitution vs Ordinary Law",
+                  "description": "The Constitution is superior to ordinary law; ordinary laws are valid only when they conform to constitutional limits.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces constitution vs ordinary law in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "The Constitution is superior to ordinary law; ordinary laws are valid only when they conform to constitutional limits.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
+                  "cards": [
+                    {
+                      "heading": "Source of authority",
+                      "body": "The Constitution creates legislatures and gives them power to make ordinary laws.",
+                      "tip": "Law-making power is not unlimited.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Ordinary law",
+                      "body": "Ordinary laws deal with specific subjects such as crimes, taxation, education, contracts and administration.",
+                      "tip": "They operate under constitutional authority.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Constitutional law",
+                      "body": "Constitutional law deals with basic institutions, powers, rights, procedures and limits.",
+                      "tip": "It is foundational.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Invalid law",
+                      "body": "A law violating the Constitution can be declared unconstitutional by courts.",
+                      "tip": "This is linked with judicial review.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Amendment difference",
+                      "body": "Constitutional amendments follow special procedures; ordinary laws follow ordinary legislative procedure.",
+                      "tip": "Do not confuse law and amendment.",
+                      "readingTimeMinutes": 1
+                    }
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Constitution vs Ordinary Law is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test constitution vs ordinary law through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m1_l3_rev_q1",
+                        "questionText": "Which statement best captures constitutional supremacy?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "constitutional supremacy is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m1_l3_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m1_l3_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m1_l3_quiz",
+                    "title": "Constitution vs Ordinary Law Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m1_l3_q1",
+                        "questionText": "Consider the following statements about constitutional supremacy:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m1_l3_q2",
+                        "questionText": "Which of the following is most closely related to constitutional supremacy?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m1_l3_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m1_l3_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m1_l3_q5",
+                        "questionText": "The safest way to remember constitutional supremacy is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
                 }
               ]
             },
             {
               "id": "polity_u1_m2",
-              "name": "Module 2: Making of the Constitution",
-              "description": "How the Constituent Assembly was formed, drafted, and enacted the supreme law",
-              "imageUrl": "https://picsum.photos/id/35/300/300",
-              "revision": {
-                "cards": [],
-                "recapQuestions": []
+              "name": "Salient Features of the Constitution",
+              "description": "Covers the major features of the Indian Constitution and their UPSC relevance.",
+              "moduleSummary": {
+                "cards": [
+                  {
+                    "heading": "Module focus",
+                    "body": "This module covers written and detailed nature, federalism, parliamentary government, independent judiciary, judicial review, democracy, republic and secularism.",
+                    "tip": "High-yield for prelims.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Learning method",
+                    "body": "For every feature, learn meaning, Indian form and UPSC trap.",
+                    "tip": "Do not stop at definitions.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Big idea",
+                    "body": "The Indian Constitution balances federal and unitary, rigid and flexible, rights and restrictions, democracy and judicial review.",
+                    "tip": "Balance is the theme.",
+                    "readingTimeMinutes": 1
+                  }
+                ]
               },
-              "quiz": {
+              "revision": {
+                "cards": [
+                  {
+                    "heading": "Written and detailed",
+                    "body": "The Constitution covers institutions, rights, duties, Union-State relations, emergencies, elections, services, schedules and amendments.",
+                    "tip": "Length reflects complexity.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Rigid and flexible",
+                    "body": "Some provisions can be changed by simple majority, some by special majority and some by special majority plus state ratification.",
+                    "tip": "This balances stability and change.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Federal with unitary bias",
+                    "body": "India has federal features but a stronger Union.",
+                    "tip": "Very common UPSC area.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Parliamentary system",
+                    "body": "The executive is responsible to the legislature, and real power lies with the Council of Ministers headed by the Prime Minister.",
+                    "tip": "Responsibility is key.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Independent judiciary",
+                    "body": "The judiciary protects the Constitution and rights through independence and judicial review.",
+                    "tip": "Courts guard supremacy.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Secular democratic republic",
+                    "body": "India is democratic, republican and secular, each with a precise constitutional meaning.",
+                    "tip": "Do not mix them.",
+                    "readingTimeMinutes": 1
+                  }
+                ],
+                "recapQuestions": [
+                  {
+                    "id": "polity_u1_m2_rev_q1",
+                    "questionText": "Which feature balances continuity and change?",
+                    "options": [
+                      "Rigid and flexible amendment system",
+                      "Hereditary monarchy",
+                      "No written text",
+                      "No courts"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "The amendment system balances stability and change."
+                  },
+                  {
+                    "id": "polity_u1_m2_rev_q2",
+                    "questionText": "Which is a unitary feature?",
+                    "options": [
+                      "Single citizenship",
+                      "Division of powers",
+                      "Written Constitution",
+                      "Supremacy of Constitution"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Single citizenship is a unitary feature."
+                  },
+                  {
+                    "id": "polity_u1_m2_rev_q3",
+                    "questionText": "The core of parliamentary government is:",
+                    "options": [
+                      "Executive responsibility to legislature",
+                      "Complete separation",
+                      "Rule by judges",
+                      "Rule by states"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Responsibility to legislature is central."
+                  },
+                  {
+                    "id": "polity_u1_m2_rev_q4",
+                    "questionText": "India is a republic because:",
+                    "options": [
+                      "The head of State is elected",
+                      "The judiciary exists",
+                      "The Constitution is long",
+                      "The PM is appointed"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "A republic has an elected head of State."
+                  },
+                  {
+                    "id": "polity_u1_m2_rev_q5",
+                    "questionText": "Judicial review protects:",
+                    "options": [
+                      "Constitutional supremacy",
+                      "Hereditary privilege",
+                      "Party symbols",
+                      "Cabinet expansion"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Judicial review protects constitutional supremacy."
+                  }
+                ]
+              },
+              "moduleQuiz": {
                 "id": "polity_u1_m2_quiz",
-                "title": "Making of the Constitution Quiz",
-                "questions": []
+                "title": "Salient Features of the Constitution Quiz",
+                "questions": [
+                  {
+                    "id": "polity_u1_q1",
+                    "questionText": "Consider the following statements:\n1. A Constitution creates government institutions.\n2. A Constitution limits government institutions.\nWhich of the statements given above is/are correct?",
+                    "options": [
+                      "1 only",
+                      "2 only",
+                      "Both 1 and 2",
+                      "Neither 1 nor 2"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "A Constitution both creates and limits institutions."
+                  },
+                  {
+                    "id": "polity_u1_q2",
+                    "questionText": "Which of the following are federal features of the Indian Constitution?\n1. Written Constitution\n2. Division of powers\n3. Independent judiciary\n4. Single citizenship\nSelect the correct answer:",
+                    "options": [
+                      "1, 2 and 3 only",
+                      "1 and 4 only",
+                      "2, 3 and 4 only",
+                      "1, 2, 3 and 4"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Single citizenship is generally a unitary feature; the first three are federal features."
+                  },
+                  {
+                    "id": "polity_u1_q3",
+                    "questionText": "Which one of the following best shows the unitary bias of the Indian Constitution?",
+                    "options": [
+                      "Division of powers",
+                      "Supremacy of Constitution",
+                      "Emergency provisions strengthening the Union",
+                      "Independent judiciary"
+                    ],
+                    "correctOptionIndex": 2,
+                    "explanation": "Emergency provisions can strengthen the Union and show unitary bias."
+                  },
+                  {
+                    "id": "polity_u1_q4",
+                    "questionText": "In the parliamentary system, the executive is primarily responsible to the:",
+                    "options": [
+                      "Legislature",
+                      "Judiciary",
+                      "Election Commission",
+                      "Comptroller and Auditor General"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Executive responsibility to the legislature is central to parliamentary government."
+                  },
+                  {
+                    "id": "polity_u1_q5",
+                    "questionText": "Judicial review means:",
+                    "options": [
+                      "Courts can examine the constitutionality of laws and executive actions",
+                      "Courts can frame the annual budget",
+                      "Courts can appoint ministers",
+                      "Courts can dissolve Parliament at will"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Judicial review allows constitutional testing of laws and actions."
+                  },
+                  {
+                    "id": "polity_u1_q6",
+                    "questionText": "Which pair is correctly matched?\n1. Parliamentary system - United Kingdom\n2. Fundamental Rights - United States\n3. DPSPs - Ireland\nSelect the correct answer:",
+                    "options": [
+                      "1 and 2 only",
+                      "2 and 3 only",
+                      "1 and 3 only",
+                      "1, 2 and 3"
+                    ],
+                    "correctOptionIndex": 3,
+                    "explanation": "All three source-feature pairs are standard."
+                  },
+                  {
+                    "id": "polity_u1_q7",
+                    "questionText": "The Indian Constitution is called detailed mainly because it:",
+                    "options": [
+                      "Covers many institutions, rights, procedures and special situations",
+                      "Contains only the Preamble",
+                      "Avoids administrative details",
+                      "Has no federal provisions"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "It covers a very wide constitutional field."
+                  },
+                  {
+                    "id": "polity_u1_q8",
+                    "questionText": "Which statement is correct about constitutional supremacy?",
+                    "options": [
+                      "Ordinary law is above the Constitution",
+                      "All public authority must act within the Constitution",
+                      "Courts cannot test laws",
+                      "The executive can ignore rights"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "Constitutional supremacy means public authority must conform to the Constitution."
+                  },
+                  {
+                    "id": "polity_u1_q9",
+                    "questionText": "India is a republic because:",
+                    "options": [
+                      "The head of State is elected",
+                      "The Prime Minister exists",
+                      "There is a written Constitution",
+                      "There are many states"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "A republic has an elected, not hereditary, head of State."
+                  },
+                  {
+                    "id": "polity_u1_q10",
+                    "questionText": "Which of the following best describes the Indian Constitution's borrowings?",
+                    "options": [
+                      "Blind copying of foreign systems",
+                      "Selective borrowing and adaptation to Indian needs",
+                      "No borrowing from anywhere",
+                      "Only colonial copying"
+                    ],
+                    "correctOptionIndex": 1,
+                    "explanation": "The Constitution borrowed tested ideas and adapted them."
+                  }
+                ]
               },
               "lessons": [
-                {
-                  "id": "polity_u1_m2_l0",
-                  "name": "Module 2 Summary",
-                  "description": "5-card master summary of assembly workings and drafts",
-                  "imageUrl": "https://picsum.photos/id/24/300/300",
-                  "readingTimeMinutes": 25,
-                  "cards": [
-                    {
-                      "heading": "Module 2 Summary Overview",
-                      "body": "This lesson summarizes how the Constitution was designed. We highlight the Cabinet Mission plan, major committees, and the final adoption of the draft.",
-                      "tip": "Keep key dates (December 1946, November 1949) in mind.",
-                      "readingTimeMinutes": 5
-                    },
-                    {
-                      "heading": "The Assembly Genesis (Nov 1946)",
-                      "body": "Constituted under the Cabinet Mission Plan. It consisted of 389 members initially, reduced to 299 after Partition. First meeting was on December 9, 1946.",
-                      "tip": "Dr. Sachchidanand Sinha was temporary president.",
-                      "readingTimeMinutes": 5
-                    },
-                    {
-                      "heading": "Objectives Resolution",
-                      "body": "Jawaharlal Nehru moved the historic Objectives Resolution on Dec 13, 1946. It laid the ideological base of the constitution and became the Preamble.",
-                      "tip": "Adopted unanimously on Jan 22, 1947.",
-                      "readingTimeMinutes": 5
-                    },
-                    {
-                      "heading": "The Drafting Committee",
-                      "body": "Chaired by Dr. B.R. Ambedkar. It was a 7-member committee appointed on August 29, 1947, to write the draft based on reports of other advisory panels.",
-                      "tip": "Ambedkar is called the Father of the Indian Constitution.",
-                      "readingTimeMinutes": 5
-                    },
-                    {
-                      "heading": "Enactment & Adoption",
-                      "body": "Adopted on November 26, 1949. Contained 395 Articles and 8 Schedules. Full commencement was on January 26, 1950, to mark the Lahore Congress Purna Swaraj resolution date.",
-                      "tip": "January 26 is celebrated as Republic Day.",
-                      "readingTimeMinutes": 5
-                    }
-                  ]
-                },
                 {
                   "id": "polity_u1_m2_l1",
-                  "name": "Composition and Working of Assembly",
-                  "description": "How the assembly represented India and handled legislative work",
-                  "imageUrl": "https://picsum.photos/id/28/300/300",
-                  "readingTimeMinutes": 10,
+                  "name": "Written and Detailed Constitution",
+                  "description": "India’s Constitution is written and detailed because India required clarity for a complex, diverse, federal democracy.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces written and detailed constitution in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "India’s Constitution is written and detailed because India required clarity for a complex, diverse, federal democracy.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
                   "cards": [
                     {
-                      "heading": "Lesson 1 Summary Overview",
-                      "body": "This lesson outlines the composition, seat allocation, and key meetings of the Constituent Assembly.",
-                      "tip": "Note that seats were allocated based on population (1 per million).",
-                      "readingTimeMinutes": 5
+                      "heading": "Written document",
+                      "body": "The Constitution exists as an authoritative written document laying down basic structure, powers, procedures, rights and duties.",
+                      "tip": "Written form supports certainty.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Seat Allocation and Partition",
-                      "body": "Seats allocated to British Provinces and Princely States. Following Partition, members representing Pakistan territories withdrew, reducing the count to 299.",
-                      "tip": "Assembly members were indirectly elected by provincial assemblies.",
-                      "readingTimeMinutes": 5
+                      "heading": "Detailed coverage",
+                      "body": "It covers the Union, States, judiciary, rights, duties, elections, services, emergency provisions, schedules and amendments.",
+                      "tip": "It is not a bare outline.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Reason for detail",
+                      "body": "India's diversity, federal structure, administrative complexity and social reform goals required detail.",
+                      "tip": "Detail reflects need.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Parts and Schedules",
+                      "body": "The Constitution is organised into Parts, Articles and Schedules, making it easier to classify subjects.",
+                      "tip": "Structure helps revision.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Not merely rigid",
+                      "body": "A detailed Constitution can still be amendable. India combines detail with flexibility in some areas.",
+                      "tip": "Do not confuse length with rigidity.",
+                      "readingTimeMinutes": 1
                     }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "unit_2",
-          "name": "Unit 2: System of Government",
-          "description": "Parliamentary system, federal features, emergency powers, and relations",
-          "imageUrl": "https://picsum.photos/id/60/300/300",
-          "revision": {
-            "cards": [],
-            "recapQuestions": []
-          },
-          "quiz": {
-            "id": "polity_u2_quiz",
-            "title": "System of Government Quiz",
-            "questions": []
-          },
-          "modules": [
-            {
-              "id": "polity_u2_m0",
-              "name": "Module 0: Unit 2 Summary",
-              "description": "Master summaries on Parliamentary Systems and Federal Organs",
-              "imageUrl": "https://picsum.photos/id/42/300/300",
-              "revision": {
-                "cards": [],
-                "recapQuestions": []
-              },
-              "quiz": {
-                "id": "polity_u2_m0_quiz",
-                "title": "Unit 2 Summary Quiz",
-                "questions": []
-              },
-              "lessons": [
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Written and Detailed Constitution is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test written and detailed constitution through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m2_l1_rev_q1",
+                        "questionText": "Which statement best captures written and detailed Constitution?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "written and detailed Constitution is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m2_l1_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l1_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m2_l1_quiz",
+                    "title": "Written and Detailed Constitution Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m2_l1_q1",
+                        "questionText": "Consider the following statements about written and detailed Constitution:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m2_l1_q2",
+                        "questionText": "Which of the following is most closely related to written and detailed Constitution?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m2_l1_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m2_l1_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l1_q5",
+                        "questionText": "The safest way to remember written and detailed Constitution is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
+                },
                 {
-                  "id": "polity_u2_m0_l0",
-                  "name": "Unit 2 Master Summary",
-                  "description": "5-card master summary of System of Government",
-                  "imageUrl": "https://picsum.photos/id/29/300/300",
-                  "readingTimeMinutes": 25,
+                  "id": "polity_u1_m2_l2",
+                  "name": "Federal System with Unitary Bias",
+                  "description": "India has a federal structure with a strong Union, especially visible in emergencies and centre-state relations.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces federal system with unitary bias in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "India has a federal structure with a strong Union, especially visible in emergencies and centre-state relations.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
                   "cards": [
                     {
-                      "heading": "Unit 2 Overview",
-                      "body": "This lesson summarizes parliamentary features, executive accountability, and federal versus unitary distributions of power in the Indian System of Government.",
-                      "tip": "Focus on the separation of legislative and executive powers.",
-                      "readingTimeMinutes": 5
+                      "heading": "Federal meaning",
+                      "body": "Federalism divides power between different levels of government, mainly Union and States in India.",
+                      "tip": "Division of powers is core.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Parliamentary Government",
-                      "body": "India adopted the Westminster model at both Centre and States. Key features are executive responsibility to the legislature, dual executives (nominal and real), and leadership of the Prime Minister.",
-                      "tip": "Article 74 & 75 outline parliamentary structure at the Centre.",
-                      "readingTimeMinutes": 5
+                      "heading": "Federal features",
+                      "body": "Written Constitution, division of powers, supremacy of Constitution, independent judiciary and partly rigid amendment are federal features.",
+                      "tip": "Classify features.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Federal Structure",
-                      "body": "India's system is federal with a strong unitary bias (described as 'quasi-federal'). Unitary characteristics include a single constitution, emergency powers, and appointment of Governors.",
-                      "tip": "Article 1 describes India as a Union of States.",
-                      "readingTimeMinutes": 5
+                      "heading": "Unitary bias",
+                      "body": "A strong Centre, single citizenship, emergency provisions, integrated judiciary and All India Services show unitary tilt.",
+                      "tip": "Centre is stronger.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Relations (Centre & States)",
-                      "body": "Legislative relations (Article 245-255), administrative relations (Article 256-263), and financial relations allocate authority clearly but allow central dominance during emergencies.",
-                      "tip": "The concurrent list covers shared jurisdictions.",
-                      "readingTimeMinutes": 5
+                      "heading": "Emergency impact",
+                      "body": "During emergency, the Union can gain wider control, making the system more unitary for that period.",
+                      "tip": "Crisis strengthens Centre.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Emergency Powers",
-                      "body": "Part XVIII of the Constitution (Articles 352-360) grants emergency powers to safeguard the country's sovereignty. During emergencies, the federal structure turns unitary.",
-                      "tip": "No financial emergency has ever been declared in India.",
-                      "readingTimeMinutes": 5
+                      "heading": "Reason for strong Centre",
+                      "body": "Partition, national unity, security and integration influenced the choice of a strong Union.",
+                      "tip": "History shaped federalism.",
+                      "readingTimeMinutes": 1
                     }
-                  ]
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Federal System with Unitary Bias is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test federal system with unitary bias through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m2_l2_rev_q1",
+                        "questionText": "Which statement best captures Indian federalism?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Indian federalism is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m2_l2_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l2_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m2_l2_quiz",
+                    "title": "Federal System with Unitary Bias Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m2_l2_q1",
+                        "questionText": "Consider the following statements about Indian federalism:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m2_l2_q2",
+                        "questionText": "Which of the following is most closely related to Indian federalism?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m2_l2_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m2_l2_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l2_q5",
+                        "questionText": "The safest way to remember Indian federalism is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "polity_u1_m2_l3",
+                  "name": "Parliamentary Government",
+                  "description": "India follows parliamentary government where the executive is responsible to the legislature.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces parliamentary government in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "India follows parliamentary government where the executive is responsible to the legislature.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
+                  "cards": [
+                    {
+                      "heading": "Basic meaning",
+                      "body": "In a parliamentary system, the executive is drawn from and responsible to the legislature.",
+                      "tip": "Responsibility is central.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Nominal and real executive",
+                      "body": "The President is the constitutional head; the Prime Minister and Council of Ministers exercise real executive power.",
+                      "tip": "Separate formal and real power.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Collective responsibility",
+                      "body": "The Council of Ministers is collectively responsible to the Lok Sabha.",
+                      "tip": "This is the heart of the system.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Fusion of powers",
+                      "body": "Executive and legislature are closely connected, unlike strict separation in a presidential system.",
+                      "tip": "Ministers are usually legislators.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Why India adopted it",
+                      "body": "India had experience with parliamentary institutions and preferred accountable government in a diverse democracy.",
+                      "tip": "Accountability mattered.",
+                      "readingTimeMinutes": 1
+                    }
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Parliamentary Government is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test parliamentary government through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m2_l3_rev_q1",
+                        "questionText": "Which statement best captures parliamentary government?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "parliamentary government is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m2_l3_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l3_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m2_l3_quiz",
+                    "title": "Parliamentary Government Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m2_l3_q1",
+                        "questionText": "Consider the following statements about parliamentary government:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m2_l3_q2",
+                        "questionText": "Which of the following is most closely related to parliamentary government?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m2_l3_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m2_l3_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l3_q5",
+                        "questionText": "The safest way to remember parliamentary government is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "polity_u1_m2_l4",
+                  "name": "Independent Judiciary and Judicial Review",
+                  "description": "An independent judiciary and judicial review protect constitutional supremacy, rights and federal balance.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces independent judiciary and judicial review in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "An independent judiciary and judicial review protect constitutional supremacy, rights and federal balance.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
+                  "cards": [
+                    {
+                      "heading": "Independent judiciary",
+                      "body": "Courts must decide constitutional disputes without improper pressure from executive or legislature.",
+                      "tip": "Independence protects fairness.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Guardian role",
+                      "body": "The judiciary protects the Constitution, Fundamental Rights and federal balance.",
+                      "tip": "It is a constitutional umpire.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Judicial review",
+                      "body": "Judicial review is the power to examine the constitutionality of laws and executive actions.",
+                      "tip": "Review means constitutional testing.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Why it matters",
+                      "body": "Without judicial review, constitutional limits may become weak.",
+                      "tip": "It enforces supremacy.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Institutional limits",
+                      "body": "Judicial review is powerful, but courts must respect separation of powers and constitutional boundaries.",
+                      "tip": "Review is not unlimited governance.",
+                      "readingTimeMinutes": 1
+                    }
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Independent Judiciary and Judicial Review is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test independent judiciary and judicial review through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m2_l4_rev_q1",
+                        "questionText": "Which statement best captures judicial review?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "judicial review is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m2_l4_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l4_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m2_l4_quiz",
+                    "title": "Independent Judiciary and Judicial Review Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m2_l4_q1",
+                        "questionText": "Consider the following statements about judicial review:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m2_l4_q2",
+                        "questionText": "Which of the following is most closely related to judicial review?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m2_l4_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m2_l4_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l4_q5",
+                        "questionText": "The safest way to remember judicial review is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "polity_u1_m2_l5",
+                  "name": "Democracy, Republic and Secularism",
+                  "description": "India is democratic, republican and secular; each term has a distinct constitutional meaning.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces democracy, republic and secularism in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "India is democratic, republican and secular; each term has a distinct constitutional meaning.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
+                  "cards": [
+                    {
+                      "heading": "Democracy",
+                      "body": "Democracy means political authority ultimately comes from the people through elections, representation, rights and accountability.",
+                      "tip": "Voting is important but not everything.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Universal adult franchise",
+                      "body": "Adult citizens have the right to vote without property, education, caste, religion or gender qualifications, subject to law.",
+                      "tip": "This reflects political equality.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Republic",
+                      "body": "Republic means the head of State is elected, not hereditary.",
+                      "tip": "India’s President is elected.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Secularism",
+                      "body": "Indian secularism means no official State religion and equal respect for all religions, with scope for reform and regulation under constitutional limits.",
+                      "tip": "It is not anti-religion.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Combined value",
+                      "body": "Democracy, republic and secularism support equal citizenship and constitutional government.",
+                      "tip": "These values shape later topics.",
+                      "readingTimeMinutes": 1
+                    }
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Democracy, Republic and Secularism is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test democracy, republic and secularism through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m2_l5_rev_q1",
+                        "questionText": "Which statement best captures democracy, republic and secularism?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "democracy, republic and secularism is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m2_l5_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l5_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m2_l5_quiz",
+                    "title": "Democracy, Republic and Secularism Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m2_l5_q1",
+                        "questionText": "Consider the following statements about democracy, republic and secularism:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m2_l5_q2",
+                        "questionText": "Which of the following is most closely related to democracy, republic and secularism?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m2_l5_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m2_l5_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m2_l5_q5",
+                        "questionText": "The safest way to remember democracy, republic and secularism is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
                 }
               ]
             },
             {
-              "id": "polity_u2_m3",
-              "name": "Module 3: Parliamentary System",
-              "description": "The Westminster model of government and executive-legislative balance",
-              "imageUrl": "https://picsum.photos/id/33/300/300",
-              "revision": {
-                "cards": [],
-                "recapQuestions": []
+              "id": "polity_u1_m3",
+              "name": "Sources of the Constitution",
+              "description": "Covers borrowed features, Government of India Act 1935 influence, and Indian adaptations.",
+              "moduleSummary": {
+                "cards": [
+                  {
+                    "heading": "Module focus",
+                    "body": "This module explains where important features of the Constitution came from.",
+                    "tip": "Source-feature pairs matter.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Main idea",
+                    "body": "India borrowed from many systems but adapted each feature to Indian needs.",
+                    "tip": "Borrowed does not mean copied.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Major source",
+                    "body": "The Government of India Act, 1935 strongly influenced administrative and federal features.",
+                    "tip": "High-yield fact.",
+                    "readingTimeMinutes": 1
+                  }
+                ]
               },
-              "quiz": {
-                "id": "polity_u2_m3_quiz",
-                "title": "Parliamentary System Quiz",
-                "questions": []
+              "revision": {
+                "cards": [
+                  {
+                    "heading": "Borrowed features",
+                    "body": "The Constitution borrowed features from the UK, USA, Ireland, Canada, Australia, Germany, France, Japan, South Africa and others.",
+                    "tip": "Learn major pairs.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "UK influence",
+                    "body": "Parliamentary government, rule of law, cabinet system, legislative procedure, writs and single citizenship are linked with Britain.",
+                    "tip": "UK source is very important.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "USA influence",
+                    "body": "Fundamental Rights, judicial review, independence of judiciary and impeachment of President are linked with the USA.",
+                    "tip": "Rights and courts.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Ireland and Canada",
+                    "body": "DPSPs are inspired by Ireland. Federation with strong Centre and residuary powers with Centre are linked with Canada.",
+                    "tip": "Common trap.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Government of India Act 1935",
+                    "body": "This Act influenced federal scheme, Governor, judiciary, Public Service Commissions, emergency provisions and administrative details.",
+                    "tip": "Major structural source.",
+                    "readingTimeMinutes": 1
+                  },
+                  {
+                    "heading": "Indian adaptation",
+                    "body": "The framers modified borrowed features to suit Indian democracy, diversity, social justice and national unity.",
+                    "tip": "Adaptation is the final point.",
+                    "readingTimeMinutes": 1
+                  }
+                ],
+                "recapQuestions": [
+                  {
+                    "id": "polity_u1_m3_rev_q1",
+                    "questionText": "Parliamentary government is mainly inspired by:",
+                    "options": [
+                      "United Kingdom",
+                      "Ireland",
+                      "Japan",
+                      "France"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Parliamentary government is mainly from the UK."
+                  },
+                  {
+                    "id": "polity_u1_m3_rev_q2",
+                    "questionText": "Fundamental Rights are mainly inspired by:",
+                    "options": [
+                      "USA",
+                      "Canada",
+                      "Ireland",
+                      "Australia"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Fundamental Rights are inspired by the USA."
+                  },
+                  {
+                    "id": "polity_u1_m3_rev_q3",
+                    "questionText": "DPSPs are inspired by:",
+                    "options": [
+                      "Ireland",
+                      "USA",
+                      "Japan",
+                      "France"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "DPSPs are inspired by Ireland."
+                  },
+                  {
+                    "id": "polity_u1_m3_rev_q4",
+                    "questionText": "Residuary powers with Centre are linked with:",
+                    "options": [
+                      "Canada",
+                      "UK",
+                      "Ireland",
+                      "France"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Canada influenced this feature."
+                  },
+                  {
+                    "id": "polity_u1_m3_rev_q5",
+                    "questionText": "The 1935 Act strongly influenced:",
+                    "options": [
+                      "Administrative and federal structure",
+                      "Only Fundamental Duties",
+                      "Only Preamble",
+                      "Only citizenship by birth"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "It influenced structure and administration."
+                  }
+                ]
+              },
+              "moduleQuiz": {
+                "id": "polity_u1_m3_quiz",
+                "title": "Sources of the Constitution Quiz",
+                "questions": [
+                  {
+                    "id": "polity_u1_m3_q1",
+                    "questionText": "Which pairs are correctly matched?\n1. Parliamentary system - UK\n2. Fundamental Rights - USA\n3. DPSPs - Ireland\nSelect the correct answer:",
+                    "options": [
+                      "1 and 2 only",
+                      "2 and 3 only",
+                      "1 and 3 only",
+                      "1, 2 and 3"
+                    ],
+                    "correctOptionIndex": 3,
+                    "explanation": "All three are correct."
+                  },
+                  {
+                    "id": "polity_u1_m3_q2",
+                    "questionText": "Which source strongly influenced administrative structure?",
+                    "options": [
+                      "Government of India Act, 1935",
+                      "French Constitution",
+                      "Japanese Constitution",
+                      "Swiss Constitution"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "The 1935 Act was a major structural source."
+                  },
+                  {
+                    "id": "polity_u1_m3_q3",
+                    "questionText": "Which feature is linked with Canada?",
+                    "options": [
+                      "Federation with strong Centre",
+                      "DPSPs",
+                      "Fundamental Rights",
+                      "Procedure established by law"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Canada influenced strong Centre features."
+                  },
+                  {
+                    "id": "polity_u1_m3_q4",
+                    "questionText": "Which feature is linked with Australia?",
+                    "options": [
+                      "Concurrent List",
+                      "DPSPs",
+                      "Fundamental Duties",
+                      "Republic"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Concurrent List is linked with Australia."
+                  },
+                  {
+                    "id": "polity_u1_m3_q5",
+                    "questionText": "Procedure established by law is associated with:",
+                    "options": [
+                      "Japan",
+                      "Ireland",
+                      "Canada",
+                      "South Africa"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "This is associated with Japan."
+                  },
+                  {
+                    "id": "polity_u1_m3_q6",
+                    "questionText": "Which pair is incorrectly matched?",
+                    "options": [
+                      "DPSPs - Ireland",
+                      "Fundamental Rights - USA",
+                      "Parliamentary government - UK",
+                      "Concurrent List - France"
+                    ],
+                    "correctOptionIndex": 3,
+                    "explanation": "Concurrent List is associated with Australia."
+                  },
+                  {
+                    "id": "polity_u1_m3_q7",
+                    "questionText": "Liberty, equality and fraternity are associated with:",
+                    "options": [
+                      "France",
+                      "Canada",
+                      "Japan",
+                      "Australia"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "These ideals are associated with France."
+                  },
+                  {
+                    "id": "polity_u1_m3_q8",
+                    "questionText": "Election of Rajya Sabha members by proportional representation is associated with:",
+                    "options": [
+                      "South Africa",
+                      "Japan",
+                      "Germany",
+                      "Ireland"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "This is associated with South Africa."
+                  },
+                  {
+                    "id": "polity_u1_m3_q9",
+                    "questionText": "Emergency provisions are associated with:",
+                    "options": [
+                      "Germany",
+                      "Ireland",
+                      "Japan",
+                      "Australia only"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Emergency provisions are linked with Weimar Germany."
+                  },
+                  {
+                    "id": "polity_u1_m3_q10",
+                    "questionText": "Why is 'copy-paste Constitution' wrong?",
+                    "options": [
+                      "Features were adapted to Indian needs",
+                      "No foreign source was used",
+                      "It is unwritten",
+                      "It has no legal validity"
+                    ],
+                    "correctOptionIndex": 0,
+                    "explanation": "Borrowed features were adapted."
+                  }
+                ]
               },
               "lessons": [
                 {
-                  "id": "polity_u2_m3_l0",
-                  "name": "Module 3 Summary",
-                  "description": "5-card master summary of Parliamentary features",
-                  "imageUrl": "https://picsum.photos/id/35/300/300",
-                  "readingTimeMinutes": 25,
+                  "id": "polity_u1_m3_l1",
+                  "name": "Borrowed Features from Other Constitutions",
+                  "description": "India borrowed tested constitutional ideas from many countries and adapted them to Indian needs.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces borrowed features from other constitutions in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "India borrowed tested constitutional ideas from many countries and adapted them to Indian needs.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
                   "cards": [
                     {
-                      "heading": "Module 3 Summary Overview",
-                      "body": "This lesson summarizes the Parliamentary Westminster system. It covers nominal vs real executives, collective responsibility, and political homogeneity.",
-                      "tip": "Contrast this with the presidential model of separate powers.",
-                      "readingTimeMinutes": 5
+                      "heading": "Why borrowing happened",
+                      "body": "The framers studied working constitutional systems and selected useful features.",
+                      "tip": "Borrowing was deliberate.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Nominal and Real Executives",
-                      "body": "The President is the nominal executive (De Jure head) while the Prime Minister is the real executive (De Facto head) who exercises supreme powers.",
-                      "tip": "The PM leads the Council of Ministers.",
-                      "readingTimeMinutes": 5
+                      "heading": "UK source",
+                      "body": "Parliamentary government, rule of law, cabinet system, legislative procedure, single citizenship and writs are linked with the UK.",
+                      "tip": "UK is a major source.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Collective Responsibility",
-                      "body": "Ministers are collectively responsible to the Parliament, specifically the Lok Sabha (Lower House). They sink or swim together (No-Confidence Motion).",
-                      "tip": "This is the core pillar of parliamentary accountability.",
-                      "readingTimeMinutes": 5
+                      "heading": "USA source",
+                      "body": "Fundamental Rights, judicial review, independence of judiciary, impeachment of President and removal of judges are linked with the USA.",
+                      "tip": "Rights and courts.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Political Homogeneity",
-                      "body": "Members of the Council of Ministers usually belong to the same political party or coalition, sharing similar policies and administrative vision.",
-                      "tip": "In coalition cabinets, this is achieved through a common minimum program.",
-                      "readingTimeMinutes": 5
+                      "heading": "Ireland and Canada",
+                      "body": "DPSPs came from Ireland; federation with strong Centre and residuary powers with Centre are linked with Canada.",
+                      "tip": "Do not mix these.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Double Membership",
-                      "body": "Ministers must be members of Parliament. If a non-MP is appointed as a minister, they must secure a seat within 6 months.",
-                      "tip": "This ensures the executive remains rooted inside the legislature.",
-                      "readingTimeMinutes": 5
+                      "heading": "Other sources",
+                      "body": "Australia influenced Concurrent List and joint sitting; Germany influenced emergency provisions; Japan influenced procedure established by law; France influenced liberty, equality and fraternity.",
+                      "tip": "Revise as pairs.",
+                      "readingTimeMinutes": 1
                     }
-                  ]
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Borrowed Features from Other Constitutions is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test borrowed features from other constitutions through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m3_l1_rev_q1",
+                        "questionText": "Which statement best captures borrowed features?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "borrowed features is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m3_l1_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m3_l1_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m3_l1_quiz",
+                    "title": "Borrowed Features from Other Constitutions Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m3_l1_q1",
+                        "questionText": "Consider the following statements about borrowed features:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m3_l1_q2",
+                        "questionText": "Which of the following is most closely related to borrowed features?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m3_l1_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m3_l1_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m3_l1_q5",
+                        "questionText": "The safest way to remember borrowed features is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
                 },
                 {
-                  "id": "polity_u2_m3_l1",
-                  "name": "Features of Parliamentary Government",
-                  "description": "Core pillars including executive accountability and leadership",
-                  "imageUrl": "https://picsum.photos/id/24/300/300",
-                  "readingTimeMinutes": 10,
+                  "id": "polity_u1_m3_l2",
+                  "name": "Government of India Act, 1935",
+                  "description": "The Government of India Act, 1935 strongly influenced the Constitution’s administrative and federal structure.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces government of india act, 1935 in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "The Government of India Act, 1935 strongly influenced the Constitution’s administrative and federal structure.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
                   "cards": [
                     {
-                      "heading": "Lesson 1 Summary Overview",
-                      "body": "This lesson covers the primary features of the parliamentary executive in India.",
-                      "tip": "Note the leadership role of the Prime Minister.",
-                      "readingTimeMinutes": 5
+                      "heading": "Colonial source",
+                      "body": "The 1935 Act provided a detailed administrative framework before independence.",
+                      "tip": "Structurally important.",
+                      "readingTimeMinutes": 1
                     },
                     {
-                      "heading": "Prime Minister Leadership",
-                      "body": "The Prime Minister acts as the leader of the council, leader of the parliament, and leader of the ruling party, coordinating all government organs.",
-                      "tip": "Ambedkar described the PM as the pivot of the entire administration.",
-                      "readingTimeMinutes": 5
+                      "heading": "Federal scheme",
+                      "body": "The Act proposed an all-India federation and influenced later federal ideas, though the proposed federation did not fully operate.",
+                      "tip": "Federal roots.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Office of Governor",
+                      "body": "Many provisions related to Governors and provincial administration were influenced by the Act.",
+                      "tip": "Governor is a key continuity.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Judiciary and services",
+                      "body": "The Act influenced judiciary, Public Service Commissions and administrative machinery.",
+                      "tip": "Administrative continuity mattered.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Emergency and details",
+                      "body": "Emergency-type provisions and detailed administrative arrangements also show influence of the 1935 Act.",
+                      "tip": "Major source for structure.",
+                      "readingTimeMinutes": 1
                     }
-                  ]
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Government of India Act, 1935 is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test government of india act, 1935 through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m3_l2_rev_q1",
+                        "questionText": "Which statement best captures Government of India Act 1935?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Government of India Act 1935 is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m3_l2_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m3_l2_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m3_l2_quiz",
+                    "title": "Government of India Act, 1935 Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m3_l2_q1",
+                        "questionText": "Consider the following statements about Government of India Act 1935:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m3_l2_q2",
+                        "questionText": "Which of the following is most closely related to Government of India Act 1935?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m3_l2_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m3_l2_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m3_l2_q5",
+                        "questionText": "The safest way to remember Government of India Act 1935 is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "polity_u1_m3_l3",
+                  "name": "Indian Innovations and Adaptation",
+                  "description": "The Constitution is not merely copied; borrowed ideas were modified for Indian democracy, diversity, unity and social justice.",
+                  "readingTimeMinutes": 12,
+                  "lessonSummary": {
+                    "cards": [
+                      {
+                        "heading": "Lesson preview",
+                        "body": "This lesson introduces indian innovations and adaptation in the context of the Indian Constitution.",
+                        "tip": "Read for concept first, then fact.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "Main takeaway",
+                        "body": "The Constitution is not merely copied; borrowed ideas were modified for Indian democracy, diversity, unity and social justice.",
+                        "tip": "Convert this into one sentence before moving ahead.",
+                        "readingTimeMinutes": 1
+                      }
+                    ]
+                  },
+                  "cards": [
+                    {
+                      "heading": "Selective borrowing",
+                      "body": "The framers selected useful provisions instead of importing every foreign idea.",
+                      "tip": "Choice was deliberate.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Indian context",
+                      "body": "Features were adapted for India’s size, diversity, inequality, federal needs, Partition experience and democratic goals.",
+                      "tip": "Context shaped design.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Universal adult franchise",
+                      "body": "India adopted universal adult franchise from the beginning despite poverty, illiteracy and diversity.",
+                      "tip": "A bold democratic choice.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Social justice goals",
+                      "body": "Rights, DPSPs, abolition of untouchability, reservations and welfare aims show transformative constitutionalism.",
+                      "tip": "The Constitution seeks social change.",
+                      "readingTimeMinutes": 1
+                    },
+                    {
+                      "heading": "Balance of values",
+                      "body": "The Constitution balances liberty with reform, federalism with unity, rights with reasonable restrictions and democracy with judicial review.",
+                      "tip": "Balance is the Indian design.",
+                      "readingTimeMinutes": 1
+                    }
+                  ],
+                  "lessonRevision": {
+                    "cards": [
+                      {
+                        "heading": "Quick revision",
+                        "body": "Indian Innovations and Adaptation is important because it explains a core feature of India's constitutional framework.",
+                        "tip": "Revise the main idea, not just terms.",
+                        "readingTimeMinutes": 1
+                      },
+                      {
+                        "heading": "UPSC angle",
+                        "body": "UPSC can test indian innovations and adaptation through correct/incorrect statements and close constitutional traps.",
+                        "tip": "Watch absolute words like only, always and never.",
+                        "readingTimeMinutes": 1
+                      }
+                    ],
+                    "recapQuestions": [
+                      {
+                        "id": "polity_u1_m3_l3_rev_q1",
+                        "questionText": "Which statement best captures Indian adaptation?",
+                        "options": [
+                          "It is irrelevant to the Constitution",
+                          "It is a core constitutional idea",
+                          "It applies only to local customs",
+                          "It has no legal or political relevance"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Indian adaptation is a core constitutional idea."
+                      },
+                      {
+                        "id": "polity_u1_m3_l3_rev_q2",
+                        "questionText": "Which method is best for this lesson?",
+                        "options": [
+                          "Mug up words only",
+                          "Understand meaning, purpose and exam trap",
+                          "Ignore examples",
+                          "Read only options"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "Polity needs meaning, purpose and traps."
+                      },
+                      {
+                        "id": "polity_u1_m3_l3_rev_q3",
+                        "questionText": "A UPSC-style question on this area is likely to test:",
+                        "options": [
+                          "Only spelling",
+                          "Conceptual clarity through statements",
+                          "Only map locations",
+                          "Only arithmetic"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC often tests polity through statement-based conceptual questions."
+                      }
+                    ]
+                  },
+                  "lessonQuiz": {
+                    "id": "polity_u1_m3_l3_quiz",
+                    "title": "Indian Innovations and Adaptation Quiz",
+                    "questions": [
+                      {
+                        "id": "polity_u1_m3_l3_q1",
+                        "questionText": "Consider the following statements about Indian adaptation:\n1. It is part of India's constitutional framework.\n2. It helps explain how power is organised or limited.\nWhich is/are correct?",
+                        "options": [
+                          "1 only",
+                          "2 only",
+                          "Both 1 and 2",
+                          "Neither 1 nor 2"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Both statements are correct."
+                      },
+                      {
+                        "id": "polity_u1_m3_l3_q2",
+                        "questionText": "Which of the following is most closely related to Indian adaptation?",
+                        "options": [
+                          "Arbitrary power",
+                          "Constitutional government",
+                          "Hereditary privilege",
+                          "Absence of institutions"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "It is linked to constitutional government."
+                      },
+                      {
+                        "id": "polity_u1_m3_l3_q3",
+                        "questionText": "Which answer style is most suitable for UPSC?",
+                        "options": [
+                          "Only definition",
+                          "Definition plus purpose plus example",
+                          "Only slogan",
+                          "Only criticism"
+                        ],
+                        "correctOptionIndex": 1,
+                        "explanation": "UPSC rewards structured conceptual understanding."
+                      },
+                      {
+                        "id": "polity_u1_m3_l3_q4",
+                        "questionText": "Which of the following is generally wrong in polity questions?",
+                        "options": [
+                          "Checking each statement separately",
+                          "Identifying constitutional principle",
+                          "Selecting answer because one word feels familiar",
+                          "Eliminating absolute errors"
+                        ],
+                        "correctOptionIndex": 2,
+                        "explanation": "Familiar words can be traps."
+                      },
+                      {
+                        "id": "polity_u1_m3_l3_q5",
+                        "questionText": "The safest way to remember Indian adaptation is to connect it with:",
+                        "options": [
+                          "Power, limits and institutions",
+                          "Only names",
+                          "Only dates",
+                          "Only slogans"
+                        ],
+                        "correctOptionIndex": 0,
+                        "explanation": "Core polity concepts must be linked with power, limits and institutions."
+                      }
+                    ]
+                  }
                 }
               ]
             }
           ]
         }
       ]
-    },
-    {
-      "id": "geography",
-      "name": "Geography",
-      "description": "Physical, human, and economic geography of India and the world",
-      "iconName": "public",
-      "units": []
-    },
-    {
-      "id": "economics",
-      "name": "Economics",
-      "description": "Indian economy, fiscal policy, inflation, banking, and global trade",
-      "iconName": "trending_up",
-      "units": []
-    },
-    {
-      "id": "history",
-      "name": "History",
-      "description": "Ancient, medieval, modern history of India, and Indian national movement",
-      "iconName": "history_edu",
-      "units": []
     }
   ]
 }

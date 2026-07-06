@@ -34,7 +34,12 @@ class Unit {
   final String? imageUrl;
   final List<Module> modules;
   final RevisionData revision;
-  final QuizData quiz;
+  final List<LessonCard> unitSummary;
+  final QuizData unitQuiz;
+  final List<QuizQuestion> pyqs;
+
+  // Backward-compatibility getter
+  QuizData get quiz => unitQuiz;
 
   const Unit({
     required this.id,
@@ -43,7 +48,9 @@ class Unit {
     this.imageUrl,
     required this.modules,
     required this.revision,
-    required this.quiz,
+    required this.unitQuiz,
+    required this.unitSummary,
+    required this.pyqs,
   });
 
   factory Unit.fromJson(Map<String, dynamic> json) {
@@ -59,11 +66,19 @@ class Unit {
       revision: json['revision'] != null
           ? RevisionData.fromJson(json['revision'] as Map<String, dynamic>)
           : const RevisionData(cards: [], recapQuestions: []),
-      quiz: QuizData.fromJson(
-        json['quiz'] as Map<String, dynamic>?,
+      unitQuiz: QuizData.fromJson(
+        json['unitQuiz'] as Map<String, dynamic>? ?? json['quiz'] as Map<String, dynamic>?,
         '${json['id']}_quiz',
         'Unit Comprehensive Test',
       ),
+      unitSummary: (json['unitSummary']?['cards'] as List<dynamic>?)
+              ?.map((e) => LessonCard.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      pyqs: (json['pyqs'] as List<dynamic>?)
+              ?.map((e) => QuizQuestion.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
   }
 }
@@ -75,7 +90,11 @@ class Module {
   final String? imageUrl;
   final List<Lesson> lessons;
   final RevisionData revision;
-  final QuizData quiz;
+  final List<LessonCard> moduleSummary;
+  final QuizData moduleQuiz;
+
+  // Backward-compatibility getter
+  QuizData get quiz => moduleQuiz;
 
   const Module({
     required this.id,
@@ -84,7 +103,8 @@ class Module {
     this.imageUrl,
     required this.lessons,
     required this.revision,
-    required this.quiz,
+    required this.moduleQuiz,
+    required this.moduleSummary,
   });
 
   factory Module.fromJson(Map<String, dynamic> json) {
@@ -100,11 +120,15 @@ class Module {
       revision: json['revision'] != null
           ? RevisionData.fromJson(json['revision'] as Map<String, dynamic>)
           : const RevisionData(cards: [], recapQuestions: []),
-      quiz: QuizData.fromJson(
-        json['quiz'] as Map<String, dynamic>?,
+      moduleQuiz: QuizData.fromJson(
+        json['moduleQuiz'] as Map<String, dynamic>? ?? json['quiz'] as Map<String, dynamic>?,
         '${json['id']}_quiz',
         'Practice Quiz',
       ),
+      moduleSummary: (json['moduleSummary']?['cards'] as List<dynamic>?)
+              ?.map((e) => LessonCard.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
   }
 }
@@ -139,6 +163,14 @@ class Lesson {
   final String? imageUrl;
   final int readingTimeMinutes;
   final List<LessonCard> cards;
+  final List<LessonCard> lessonSummary;
+  final RevisionData lessonRevision;
+  final QuizData lessonQuiz;
+
+  // Backward-compatibility getters
+  List<LessonCard> get summary => lessonSummary;
+  RevisionData get revision => lessonRevision;
+  QuizData get quiz => lessonQuiz;
 
   const Lesson({
     required this.id,
@@ -147,6 +179,9 @@ class Lesson {
     this.imageUrl,
     required this.readingTimeMinutes,
     required this.cards,
+    required this.lessonSummary,
+    required this.lessonRevision,
+    required this.lessonQuiz,
   });
 
   factory Lesson.fromJson(Map<String, dynamic> json) {
@@ -160,6 +195,18 @@ class Lesson {
               ?.map((e) => LessonCard.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      lessonSummary: (json['lessonSummary']?['cards'] as List<dynamic>?)
+              ?.map((e) => LessonCard.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      lessonRevision: json['lessonRevision'] != null
+          ? RevisionData.fromJson(json['lessonRevision'] as Map<String, dynamic>)
+          : const RevisionData(cards: [], recapQuestions: []),
+      lessonQuiz: QuizData.fromJson(
+        json['lessonQuiz'] as Map<String, dynamic>?,
+        '${json['id']}_quiz',
+        'Lesson Quiz',
+      ),
     );
   }
 
@@ -183,6 +230,8 @@ class QuizQuestion {
   final List<String> options;
   final int correctOptionIndex;
   final String explanation;
+  final int? year;
+  final String? sourceTopic;
 
   const QuizQuestion({
     required this.id,
@@ -190,6 +239,8 @@ class QuizQuestion {
     required this.options,
     required this.correctOptionIndex,
     required this.explanation,
+    this.year,
+    this.sourceTopic,
   });
 
   factory QuizQuestion.fromJson(Map<String, dynamic> json) {
@@ -199,6 +250,8 @@ class QuizQuestion {
       options: (json['options'] as List<dynamic>?)?.cast<String>() ?? const [],
       correctOptionIndex: json['correctOptionIndex'] as int? ?? 0,
       explanation: json['explanation'] as String? ?? '',
+      year: json['year'] as int?,
+      sourceTopic: json['sourceTopic'] as String?,
     );
   }
 }

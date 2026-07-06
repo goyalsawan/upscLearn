@@ -33,6 +33,7 @@ class _UnitDetailViewState extends State<UnitDetailView> {
         .where((m) => m.id.endsWith('m0') || m.id.endsWith('_m0'))
         .toList();
     final summaryModule = summaryModules.isNotEmpty ? summaryModules.first : null;
+    final hasUnitSummary = widget.unit.unitSummary.isNotEmpty;
 
     // Remaining modules go into the Learn section timeline
     final timelineModules = widget.unit.modules
@@ -49,7 +50,18 @@ class _UnitDetailViewState extends State<UnitDetailView> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // ── SUMMARY SECTION ─────────────────────────────────────────
-            if (summaryModule != null) ...[
+            if (hasUnitSummary) ...[
+              _buildSectionHeader(
+                label: 'Summary',
+                icon: Icons.map_outlined,
+                color: Colors.teal,
+                theme: theme,
+                isDark: isDark,
+              ),
+              const SizedBox(height: 12),
+              _buildSummaryHero(context, widget.unit, theme, isDark),
+              const SizedBox(height: 28),
+            ] else if (summaryModule != null) ...[
               _buildSectionHeader(
                 label: 'Summary',
                 icon: Icons.map_outlined,
@@ -578,6 +590,142 @@ class _UnitDetailViewState extends State<UnitDetailView> {
                   ),
                 );
               }
+            },
+            icon: const Icon(Icons.play_circle_fill_rounded, size: 20),
+            label: const Text(
+              'Read Unit Summary Cards',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.teal.shade800,
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              elevation: 0,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSummaryHero(
+    BuildContext context,
+    Unit unit,
+    ThemeData theme,
+    bool isDark,
+  ) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: isDark
+              ? [
+                  const Color(0xFF0F766E).withOpacity(0.20),
+                  const Color(0xFF0D9488).withOpacity(0.10),
+                ]
+              : [
+                  const Color(0xFFE6F4F1),
+                  const Color(0xFFD8F3EC),
+                ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: isDark
+              ? const Color(0xFF0F766E).withOpacity(0.35)
+              : const Color(0xFF0D9488).withOpacity(0.50),
+          width: 1.5,
+        ),
+      ),
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (unit.imageUrl != null && unit.imageUrl!.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(right: 14),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.network(
+                      unit.imageUrl!,
+                      width: 56,
+                      height: 56,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          Container(
+                        width: 56,
+                        height: 56,
+                        color: theme.colorScheme.primary.withOpacity(0.08),
+                        child: Icon(Icons.image_not_supported,
+                            color: theme.colorScheme.primary, size: 24),
+                      ),
+                    ),
+                  ),
+                ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(0.15),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: const Text(
+                        'UNIT SUMMARY MAP',
+                        style: TextStyle(
+                          fontSize: 9,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.teal,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      '${unit.name.split(':').last.trim()} Summary',
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Review the key takeaways and core concepts of this unit in a swipeable card deck.',
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontSize: 12.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          ElevatedButton.icon(
+            onPressed: () {
+              final dummyLesson = Lesson(
+                id: '${unit.id}_summary',
+                name: '${unit.name.split(':').last.trim()} Summary',
+                description: unit.description,
+                readingTimeMinutes: unit.unitSummary.fold<int>(0, (prev, element) => prev + element.readingTimeMinutes),
+                cards: unit.unitSummary,
+                lessonSummary: const [],
+                lessonRevision: const RevisionData(cards: [], recapQuestions: []),
+                lessonQuiz: const QuizData(id: 'dummy_quiz', title: 'Quiz', questions: []),
+              );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LessonView(lesson: dummyLesson),
+                ),
+              );
             },
             icon: const Icon(Icons.play_circle_fill_rounded, size: 20),
             label: const Text(

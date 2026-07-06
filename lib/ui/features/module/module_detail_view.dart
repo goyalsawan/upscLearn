@@ -32,6 +32,7 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
         .where((l) => l.id.endsWith('l0') || l.id.endsWith('_l0'))
         .toList();
     final summaryLesson = summaryLessons.isNotEmpty ? summaryLessons.first : null;
+    final hasModuleSummary = widget.module.moduleSummary.isNotEmpty;
 
     // Remaining lessons go into the Learn section timeline
     final timelineLessons = widget.module.lessons
@@ -48,7 +49,18 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // ── SUMMARY SECTION ─────────────────────────────────────────
-            if (summaryLesson != null) ...[
+            if (hasModuleSummary) ...[
+              _buildSectionHeader(
+                label: 'Summary',
+                icon: Icons.map_outlined,
+                color: Colors.teal,
+                theme: theme,
+                isDark: isDark,
+              ),
+              const SizedBox(height: 12),
+              _buildSummaryHero(context, widget.module, theme, isDark),
+              const SizedBox(height: 28),
+            ] else if (summaryLesson != null) ...[
               _buildSectionHeader(
                 label: 'Summary',
                 icon: Icons.map_outlined,
@@ -362,11 +374,82 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
             ),
           ],
         ),
-        subtitle: Text(
-          '${lesson.readingTimeMinutes} mins read',
-          style: const TextStyle(
-            fontSize: 11,
-          ),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 4),
+            Row(
+              children: [
+                Text(
+                  '${lesson.readingTimeMinutes} mins read',
+                  style: const TextStyle(
+                    fontSize: 11,
+                  ),
+                ),
+                if (lesson.lessonSummary.isNotEmpty) ...[
+                  const SizedBox(width: 8),
+                  Text(
+                    '•',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: isDark ? Colors.white30 : Colors.black38,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  GestureDetector(
+                    onTap: () {
+                      final dummyLesson = Lesson(
+                        id: '${lesson.id}_summary',
+                        name: '${lesson.name} Summary',
+                        description: 'Key takeaways from this lesson.',
+                        readingTimeMinutes: lesson.lessonSummary.fold<int>(0, (prev, element) => prev + element.readingTimeMinutes),
+                        cards: lesson.lessonSummary,
+                        lessonSummary: const [],
+                        lessonRevision: const RevisionData(cards: [], recapQuestions: []),
+                        lessonQuiz: const QuizData(id: 'dummy_quiz', title: 'Quiz', questions: []),
+                      );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LessonView(lesson: dummyLesson),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(0.12),
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(
+                          color: Colors.teal.withOpacity(0.3),
+                          width: 0.8,
+                        ),
+                      ),
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.summarize_outlined,
+                            size: 11,
+                            color: Colors.teal,
+                          ),
+                          SizedBox(width: 4),
+                          Text(
+                            'Quick Summary',
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.teal,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ],
         ),
         trailing: const Icon(
           Icons.arrow_forward_ios,
@@ -538,6 +621,142 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => LessonView(lesson: lesson),
+                ),
+              );
+            },
+            icon: const Icon(Icons.play_circle_fill_rounded, size: 20),
+            label: const Text(
+              'Read Module Summary Cards',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF0F766E),
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              elevation: 0,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSummaryHero(
+    BuildContext context,
+    Module module,
+    ThemeData theme,
+    bool isDark,
+  ) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: isDark
+              ? [
+                  const Color(0xFF0F766E).withOpacity(0.20),
+                  const Color(0xFF065F46).withOpacity(0.10),
+                ]
+              : [
+                  const Color(0xFFCCFBF1),
+                  const Color(0xFFD1FAE5),
+                ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: isDark
+              ? const Color(0xFF0F766E).withOpacity(0.35)
+              : const Color(0xFF14B8A6).withOpacity(0.45),
+          width: 1.5,
+        ),
+      ),
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (module.imageUrl != null && module.imageUrl!.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(right: 14),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.network(
+                      module.imageUrl!,
+                      width: 56,
+                      height: 56,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          Container(
+                        width: 56,
+                        height: 56,
+                        color: theme.colorScheme.primary.withOpacity(0.08),
+                        child: Icon(Icons.image_not_supported,
+                            color: theme.colorScheme.primary, size: 24),
+                      ),
+                    ),
+                  ),
+                ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(0.15),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: const Text(
+                        'MODULE SUMMARY MAP',
+                        style: TextStyle(
+                          fontSize: 9,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.teal,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      '${module.name.split(':').last.trim()} Summary',
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Review the key takeaways and core concepts of this module in a swipeable card deck.',
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontSize: 12.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          ElevatedButton.icon(
+            onPressed: () {
+              final dummyLesson = Lesson(
+                id: '${module.id}_summary',
+                name: '${module.name.split(':').last.trim()} Summary',
+                description: module.description,
+                readingTimeMinutes: module.moduleSummary.fold<int>(0, (prev, element) => prev + element.readingTimeMinutes),
+                cards: module.moduleSummary,
+                lessonSummary: const [],
+                lessonRevision: const RevisionData(cards: [], recapQuestions: []),
+                lessonQuiz: const QuizData(id: 'dummy_quiz', title: 'Quiz', questions: []),
+              );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LessonView(lesson: dummyLesson),
                 ),
               );
             },
