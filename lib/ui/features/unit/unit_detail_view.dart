@@ -29,13 +29,13 @@ class _UnitDetailViewState extends State<UnitDetailView> {
     const status = JourneyStatus.active;
     const nextStatus = JourneyStatus.active;
 
-    // Extract summary Module 0
+    // Extract summary Module 0 (lives outside the Learn timeline)
     final summaryModules = widget.unit.modules
         .where((m) => m.id.endsWith('m0') || m.id.endsWith('_m0'))
         .toList();
     final summaryModule = summaryModules.isNotEmpty ? summaryModules.first : null;
 
-    // Filter out Module 0 from timeline modules
+    // Remaining modules go into the Learn section timeline
     final timelineModules = widget.unit.modules
         .where((m) => !m.id.endsWith('m0') && !m.id.endsWith('_m0'))
         .toList();
@@ -49,46 +49,74 @@ class _UnitDetailViewState extends State<UnitDetailView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // 0. Standalone Summary Card if present
+            // ── SUMMARY SECTION ─────────────────────────────────────────
             if (summaryModule != null) ...[
+              _buildSectionHeader(
+                label: 'Summary',
+                icon: Icons.map_outlined,
+                color: Colors.teal,
+                theme: theme,
+                isDark: isDark,
+              ),
+              const SizedBox(height: 12),
               _buildSummaryModuleHero(context, summaryModule, theme, isDark),
-              const SizedBox(height: 24),
+              const SizedBox(height: 28),
             ],
 
-            // 1. Pre-Unit Revision is the first checkpoint
+            // ── REVISION SECTION ─────────────────────────────────────────
+            _buildSectionHeader(
+              label: 'Revision',
+              icon: Icons.auto_stories_outlined,
+              color: const Color(0xFFB45309),
+              theme: theme,
+              isDark: isDark,
+            ),
+            const SizedBox(height: 12),
+
+            // Pre-Unit Revision is the only node in this section
             JourneyTimelineItem(
               status: JourneyStatus.completed,
               isFirst: true,
-              isLast: false,
+              isLast: true,
               nextStatus: nextStatus,
               icon: Icons.psychology,
               content: _buildRevisionSection(theme, isDark),
             ),
+            const SizedBox(height: 28),
 
-            // 2. Modules list journey mapping
+            // ── LEARN SECTION ─────────────────────────────────────────────
+            _buildSectionHeader(
+              label: 'Learn',
+              icon: Icons.school_outlined,
+              color: theme.primaryColor,
+              theme: theme,
+              isDark: isDark,
+            ),
+            const SizedBox(height: 12),
+
+            // Modules timeline
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: timelineModules.length,
               itemBuilder: (context, index) {
                 final module = timelineModules[index];
-                final isLastModule = index == timelineModules.length - 1;
 
                 return JourneyTimelineItem(
                   status: status,
-                  isFirst: false,
+                  isFirst: index == 0,
                   isLast: false,
-                  nextStatus: isLastModule ? JourneyStatus.active : JourneyStatus.active,
+                  nextStatus: JourneyStatus.active,
                   icon: Icons.folder,
                   content: _buildModuleCard(context, module, theme, isDark),
                 );
               },
             ),
 
-            // 3. Final Unit Quiz Checkpoint is the last node
+            // Final Unit Quiz Checkpoint is the last node in Learn
             JourneyTimelineItem(
               status: JourneyStatus.active,
-              isFirst: false,
+              isFirst: timelineModules.isEmpty,
               isLast: true,
               icon: Icons.workspace_premium,
               content: _buildUnitQuizCard(theme, isDark),
@@ -96,6 +124,45 @@ class _UnitDetailViewState extends State<UnitDetailView> {
           ],
         ),
       ),
+    );
+  }
+
+  /// Renders a styled section header with an icon, label, and a divider line.
+  Widget _buildSectionHeader({
+    required String label,
+    required IconData icon,
+    required Color color,
+    required ThemeData theme,
+    required bool isDark,
+  }) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(6),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.12),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Icon(icon, color: color, size: 16),
+        ),
+        const SizedBox(width: 10),
+        Text(
+          label,
+          style: theme.textTheme.titleSmall?.copyWith(
+            fontWeight: FontWeight.w800,
+            fontSize: 13,
+            color: color,
+            letterSpacing: 0.8,
+          ),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Divider(
+            color: color.withValues(alpha: 0.25),
+            thickness: 1.2,
+          ),
+        ),
+      ],
     );
   }
 

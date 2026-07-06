@@ -28,13 +28,13 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
     const status = JourneyStatus.active;
     const nextStatus = JourneyStatus.active;
 
-    // Extract summary Lesson 0
+    // Extract summary Lesson 0 (lives outside the Learn timeline)
     final summaryLessons = widget.module.lessons
         .where((l) => l.id.endsWith('l0') || l.id.endsWith('_l0'))
         .toList();
     final summaryLesson = summaryLessons.isNotEmpty ? summaryLessons.first : null;
 
-    // Filter out Lesson 0 from timeline lessons
+    // Remaining lessons go into the Learn section timeline
     final timelineLessons = widget.module.lessons
         .where((l) => !l.id.endsWith('l0') && !l.id.endsWith('_l0'))
         .toList();
@@ -48,46 +48,74 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // 0. Standalone Summary Card if present
+            // ── SUMMARY SECTION ─────────────────────────────────────────
             if (summaryLesson != null) ...[
+              _buildSectionHeader(
+                label: 'Summary',
+                icon: Icons.map_outlined,
+                color: Colors.teal,
+                theme: theme,
+                isDark: isDark,
+              ),
+              const SizedBox(height: 12),
               _buildSummaryLessonHero(context, summaryLesson, theme, isDark),
-              const SizedBox(height: 24),
+              const SizedBox(height: 28),
             ],
 
-            // 1. Pre-Module Revision is the first checkpoint
+            // ── REVISION SECTION ─────────────────────────────────────────
+            _buildSectionHeader(
+              label: 'Revision',
+              icon: Icons.layers_outlined,
+              color: const Color(0xFF0F766E),
+              theme: theme,
+              isDark: isDark,
+            ),
+            const SizedBox(height: 12),
+
+            // Pre-Module Revision is the only node in this section
             JourneyTimelineItem(
               status: JourneyStatus.completed,
               isFirst: true,
-              isLast: false,
+              isLast: true,
               nextStatus: nextStatus,
               icon: Icons.menu_book,
               content: _buildRevisionSection(theme, isDark),
             ),
+            const SizedBox(height: 28),
 
-            // 2. Lessons connected timeline path
+            // ── LEARN SECTION ─────────────────────────────────────────────
+            _buildSectionHeader(
+              label: 'Learn',
+              icon: Icons.school_outlined,
+              color: theme.primaryColor,
+              theme: theme,
+              isDark: isDark,
+            ),
+            const SizedBox(height: 12),
+
+            // Lessons timeline
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: timelineLessons.length,
               itemBuilder: (context, index) {
                 final lesson = timelineLessons[index];
-                final isLastLesson = index == timelineLessons.length - 1;
 
                 return JourneyTimelineItem(
                   status: status,
-                  isFirst: false,
+                  isFirst: index == 0,
                   isLast: false,
-                  nextStatus: isLastLesson ? JourneyStatus.active : JourneyStatus.active,
+                  nextStatus: JourneyStatus.active,
                   icon: Icons.bookmark_border,
                   content: _buildLessonTile(context, lesson, theme, isDark),
                 );
               },
             ),
 
-            // 3. Final Module Practice Quiz is the last checkpoint
+            // Final Module Practice Quiz is the last checkpoint in Learn
             JourneyTimelineItem(
               status: JourneyStatus.active,
-              isFirst: false,
+              isFirst: timelineLessons.isEmpty,
               isLast: true,
               icon: Icons.question_answer,
               content: _buildModuleQuizCard(theme, isDark),
@@ -95,6 +123,45 @@ class _ModuleDetailViewState extends State<ModuleDetailView> {
           ],
         ),
       ),
+    );
+  }
+
+  /// Renders a styled section header with an icon, label, and a divider line.
+  Widget _buildSectionHeader({
+    required String label,
+    required IconData icon,
+    required Color color,
+    required ThemeData theme,
+    required bool isDark,
+  }) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(6),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.12),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Icon(icon, color: color, size: 16),
+        ),
+        const SizedBox(width: 10),
+        Text(
+          label,
+          style: theme.textTheme.titleSmall?.copyWith(
+            fontWeight: FontWeight.w800,
+            fontSize: 13,
+            color: color,
+            letterSpacing: 0.8,
+          ),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Divider(
+            color: color.withValues(alpha: 0.25),
+            thickness: 1.2,
+          ),
+        ),
+      ],
     );
   }
 
