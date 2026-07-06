@@ -125,6 +125,19 @@ class _JourneyNodeCircleState extends State<JourneyNodeCircle>
       child: Center(child: innerChild),
     );
 
+    // Wrap in an opaque background matching the scaffold so the vertical line
+    // is painted behind the circle rather than bleeding through the semi-transparent fill.
+    final scaffoldBg = Theme.of(context).scaffoldBackgroundColor;
+    Widget maskedCircle = Container(
+      width: widget.size + 4,
+      height: widget.size + 4,
+      decoration: BoxDecoration(
+        color: scaffoldBg,
+        shape: BoxShape.circle,
+      ),
+      child: Center(child: circleWidget),
+    );
+
     if (widget.status == JourneyStatus.active) {
       return AnimatedBuilder(
         animation: _pulseAnimation,
@@ -143,11 +156,11 @@ class _JourneyNodeCircleState extends State<JourneyNodeCircle>
             child: child,
           );
         },
-        child: circleWidget,
+        child: maskedCircle,
       );
     }
 
-    return circleWidget;
+    return maskedCircle;
   }
 }
 
